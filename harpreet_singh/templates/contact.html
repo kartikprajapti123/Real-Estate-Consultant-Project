@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}
+  Contact
+{% endblock title %}
+{% block body %}
+  
+  <!-- contact section -->
+  <section class="contact_section layout_padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="heading_container">
+            <h2>
+              Contact Us
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="form_container">
+            <form  id="contact_form">
+              <div>
+                <input type="text" placeholder="Your Name" id="username" required />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" id="email" required />
+              </div>
+              <div>
+                <input type="tel" placeholder="Phone Number" id="phone" required />
+              </div>
+              
+              <div>
+                <textarea type="text" class="message-box" placeholder="Message" id="message" style="width: 100%;
+    border: none;
+    height: 100px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    outline: none;
+    color: #101010;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);"></textarea>
+              </div>
+              <div class="btn_box">
+                <button id="submit_button" role="submit">
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14687.571868282865!2d72.62559431071928!3d23.027701828464878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e86f5e58bb245%3A0x32c6e35678aa70ac!2sSoni%20ni%20chali%2C%20Virat%20Nagar%2C%20Odhav%2C%20Ahmedabad%2C%20Gujarat%20380038!5e0!3m2!1sen!2sin!4v1735752347142!5m2!1sen!2sin" 
+                      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- info section -->
+  {% endblock body %}
+
+  {% block script %}
+  <script>
+    document.getElementById("contact_form").onsubmit = (e) => {
+      e.preventDefault();  // Prevent form submission and reload
+  
+      let username = document.getElementById("username")
+      let email = document.getElementById("email")
+      let phone = document.getElementById("phone")
+      let message = document.getElementById("message")
+      let data = {
+          "username": username.value.trim(),
+          "email": email.value.trim(),
+          "phone": phone.value.trim(),
+          "message": message.value.trim()
+      };
+  
+      fetch(`${window.location.origin}/api/contact/`, {
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+      .then((response) => response.json())
+      .then((response) => {
+          if (response.success) {
+            username.value=""
+            email.value=""
+            phone.value=""
+            message.value=""
+            alert(response.message);
+              
+          } else {
+              alert(response.message);
+          }
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+          alert("An error occurred. Please try again.");
+      });
+  };
+  
+</script>
+{% endblock script %}
