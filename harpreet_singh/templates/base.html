@@ -2,59 +2,60 @@
 <html>
 
 <head>
-  <!-- Grundlegend -->
+  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metadaten -->
+  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Website Metadaten -->
+  <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/static/images/harpreet-singh.jfif" type="">
 
   <title> {% block title %}
-    {% endblock title %} </title>
+    
+  {% endblock title %} </title>
 
-  <!-- Bootstrap Core CSS -->
+  <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
-  <!-- <link rel="alternate" hreflang="en" href="https://www.ghotra-immobilien.com/index.html"> -->
-  <!-- <link rel="alternate" hreflang="de" href="https://www.ghotra-immobilien.com/index.de.html"> -->
+  <link rel="alternate" hreflang="en" href="https://www.ghotra-immobilien.com/index.html">
+  <link rel="alternate" hreflang="de" href="https://www.ghotra-immobilien.com/index.de.html">
 
-  <!-- Schriftarten -->
+  <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Owl Slider Stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-  <!-- Font Awesome Stylesheet -->
+  <!-- font awesome style -->
   <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
 
-  <!-- Benutzerdefinierte Stile für diese Vorlage -->
+  <!-- Custom styles for this template -->
   <link href="/static/css/style.css" rel="stylesheet" />
-  <!-- Responsive Stil -->
+  <!-- responsive style -->
   <link href="/static/css/responsive.css" rel="stylesheet" />
 
 </head>
 
 <body>
+
   <div class="hero_area">
-    <!-- Header-Bereich beginnt -->
+    <!-- header section strats -->
     <header class="header_section">
       <div class="header_top">
-        <div class="container-fluid ">
+        <div class="container-fluid">
           <div class="contact_nav">
-            <a href="#">
+            <a href="#" >
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Anrufen: +01 123455678990
+                Anrufen : +01 123455678990
               </span>
             </a>
             <a href="mailto:demo@gmail.com" target="_blank">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
-                E-Mail: demo@gmail.com
+                E-Mail : demo@gmail.com
               </span>
             </a>
             <a href="https://maps.google.com/?q=virat+nagar+ahmedabad" target="_blank">
@@ -68,19 +69,17 @@
       </div>
       <div class="header_bottom" style="padding: 0px;">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="/">
-              <img src="/static/images/harpreet-singh.jfif" alt=""
-                style="height: 70px; width: 70px; border-radius: 50%;">
+                <img src="/static/images/harpreet-singh.jfif" alt="" style="height: 70px;width: 70px;border-radius: 50%;">
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Navigation umschalten">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
+              <ul class="navbar-nav">
                 <li class="nav-item" id="home">
                   <a class="nav-link" href="/">Startseite</a>
                 </li>
@@ -88,7 +87,7 @@
                   <a class="nav-link" href="/service/">Dienstleistungen</a>
                 </li>
                 <li class="nav-item" id="about">
-                  <a class="nav-link" href="/about-us/"> Über Uns</a>
+                  <a class="nav-link" href="/about-us/">Über uns</a>
                 </li>
                 <li class="nav-item" id="contact">
                   <a class="nav-link" href="/contact/">Kontakt</a>
@@ -101,90 +100,135 @@
     </header>
 
     {% block body %}
+      
     {% endblock body %}
-
     <section class="info_section layout_padding2">
-      <div class="container">
-        <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-          <div class="col-md-6 col-lg-3 info_col">
-            <div class="info_contact">
-              <h4>
-                Adresse
-              </h4>
-              <div class="contact_link_box">
-                <a href="https://maps.google.com/?q=virat+nagar+ahmedabad">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>
-                    Virat Nagar
-                  </span>
+        <div class="container">
+          <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div class="col-md-6 col-lg-3 info_col">
+              <div class="info_contact">
+                <h4>
+                  Adresse
+                </h4>
+                <div class="contact_link_box">
+                  <a href="https://maps.google.com/?q=virat+nagar+ahmedabad">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                      Virat Nagar
+                    </span>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                      Anrufen +01 1234567890
+                    </span>
+                  </a>
+                  <a href="mailto:demo@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                      demo@gmail.com
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="info_social">
+                <a href="">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
-                <a href="#">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span>
-                    Anrufen: +01 1234567890
-                  </span>
+                <a href="">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="mailto:demo@gmail.com">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    demo@gmail.com
-                  </span>
+                <a href="">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-            <div class="info_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_link_box">
-              <h4>
-                Links
-              </h4>
-              <div class="info_links">
-                <a class="active" href="/">
-                  <img src="/static/images/nav-bullet.png" alt="">
-                  Startseite
-                </a>
-                <a class="" href="/about-us/">
-                  <img src="/static/images/nav-bullet.png" alt="">
-                  Über uns
-                </a>
-                <a class="" href="/service/">
-                  <img src="/static/images/nav-bullet.png" alt="">
-                  Dienstleistungen
-                </a>
-          
-                <a class="" href="/contact/">
-                  <img src="/static/images/nav-bullet.png" alt="">
-                  Kontaktieren Sie uns
-                </a>
+            <div class="col-md-6 col-lg-3 info_col">
+              <div class="info_detail">
+                <h4>Immobilien & Beratung</h4>
+                <p>
+                  Wir bieten Expertenservices in Immobilienverkauf, Investitionen und Beratung, um Ihnen zu helfen, Ihre Immobilienziele zu erreichen.
+                </p>
               </div>
             </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-3 info_col">
-            <div class="info_detail">
-              <h4>Immobilien & Beratung</h4>
-              <p>
-                Experten für Immobilienverkauf, Investitionen und Beratung zur Erreichung Ihrer Immobilienziele.
-              </p>
+            <div class="col-md-6 col-lg-3">
+              <div class="info_link_box">
+                <h4>
+                  Links
+                </h4>
+                <div class="info_links">
+                  <a class="active" href="/">
+                    <img src="/static/images/nav-bullet.png" alt="">
+                    Startseite
+                  </a>
+                  <a class="" href="/about-us/">
+                    <img src="/static/images/nav-bullet.png" alt="">
+                    Über uns
+                  </a>
+                  <a class="" href="/service/">
+                    <img src="/static/images/nav-bullet.png" alt="">
+                    Dienstleistungen
+                  </a>
+    
+                  <a class="" href="/contact/">
+                    <img src="/static/images/nav-bullet.png" alt="">
+                    Kontakt
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
+
+    <section class="footer_section">
+        <div class="container">
+          <p>
+            &copy; <span id="displayYear"></span> Alle Rechte vorbehalten von
+            <a href="https://kartikprajapati.com">kartikprajapati.com</a>
+            <a href="#">+91-9106566253</a>
+          </p>
+        </div>
+    </section>
+
+  <!-- jQery -->
+  <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="/static/js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de">
+  </script>
+
+  {% block script %}
+    
+  {% endblock script %}
+  
+  <script>
+    const path = window.location.pathname;
+
+  if (path === "/") {
+    document.getElementById("home").classList.add("active");
+  } else if (path === "/service/") {
+    document.getElementById("services").classList.add("active");
+  } else if (path === "/about-us/") {
+    document.getElementById("about").classList.add("active");
+  } else if (path === "/contact/") {
+    document.getElementById("contact").classList.add("active");
+  }
+  </script>
+  <!-- End Google Map -->
+
 </body>
 
 </html>
