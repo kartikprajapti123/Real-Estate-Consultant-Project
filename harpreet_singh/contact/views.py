@@ -67,7 +67,7 @@ class ContactViewSet(ModelViewSet):
             return Response({"success": False, "message": "Die Nachricht sollte zwischen 20 und 200 Zeichen lang sein"}, status=status.HTTP_400_BAD_REQUEST)
 
         subject = "Neue Anfrage von der Website"
-        recipient_email = "kartikprajapati26122004@gmail.com"
+        recipient_email = "info@ghotra-immobilien.com"
         template_name = "send_message.html"
         context = {
             "username": username,
