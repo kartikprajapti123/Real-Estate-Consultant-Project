@@ -5,7 +5,6 @@ from contact.serializer import ContactSerializer
 from rest_framework.viewsets import ModelViewSet
 import threading
 
-
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -32,15 +31,15 @@ def send_email_with_template(subject, recipient_email, template_name, context):
 
 
 class ContactViewSet(ModelViewSet):
-    queryset=Contact.objects.all()
-    serializer_class=ContactSerializer
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     
     def create(self, request, *args, **kwargs):
         required_fields = [
-            ('username', 'Username is required'),
-            ('email', 'Email is required'),
-            ('phone', 'Phone is required'),
-            ('message', 'Message is required')
+            ('username', 'Benutzername ist erforderlich'),
+            ('email', 'E-Mail ist erforderlich'),
+            ('phone', 'Telefonnummer ist erforderlich'),
+            ('message', 'Nachricht ist erforderlich')
         ]
 
         for field, error_message in required_fields:
@@ -53,21 +52,21 @@ class ContactViewSet(ModelViewSet):
         phone = request.data.get("phone")
         message = request.data.get("message")
 
-        # Email validation
+        # E-Mail-Validierung
         import re
         email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         if not re.match(email_regex, email):
-            return Response({"success": False, "message": "Invalid email format"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"success": False, "message": "Ungültiges E-Mail-Format"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Phone validation (assuming 10 digits for example)
+        # Telefonvalidierung (angenommen 10 Ziffern für dieses Beispiel)
         if not phone.isdigit():
-            return Response({"success": False, "message": "Invalid phone number"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"success": False, "message": "Ungültige Telefonnummer"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Message length validation
+        # Nachrichtenlängen-Validierung
         if len(message) < 20 or len(message) > 200:
-            return Response({"success": False, "message": "Message length should be between 20 and 200 characters"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"success": False, "message": "Die Nachricht sollte zwischen 20 und 200 Zeichen lang sein"}, status=status.HTTP_400_BAD_REQUEST)
 
-        subject = "New Inquiry from Website"
+        subject = "Neue Anfrage von der Website"
         recipient_email = "kartikprajapati26122004@gmail.com"
         template_name = "send_message.html"
         context = {
@@ -83,4 +82,4 @@ class ContactViewSet(ModelViewSet):
         )
         mail_thread.start()
         
-        return Response({"success": True, "message": "Message to Owner has been send successfully, He will reach out to you as soon as possible"}, status=status.HTTP_200_OK)
+        return Response({"success": True, "message": "Nachricht an den Eigentümer wurde erfolgreich gesendet. Er wird sich so schnell wie möglich bei Ihnen melden."}, status=status.HTTP_200_OK)
