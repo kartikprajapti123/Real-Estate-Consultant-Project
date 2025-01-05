@@ -36,6 +36,16 @@
   <link href="/static/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/static/css/responsive.css" rel="stylesheet" />
+  <style>
+    @supports (-webkit-touch-callout: none) {
+      #website_logo {
+          height: 72px;
+          width: auto;
+          object-fit: cover;
+          object-position: center;
+      }
+  }
+  </style>
 
 </head>
 
@@ -72,10 +82,12 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="/">
-                <img src="/static/images/webiste_logo_5.png" alt="" style="     height: 72px;
+                <img src="/static/images/webiste_logo_5.png" id="website_logo"   alt="" style="height: 72px;
     width: fit-content;
     object-fit: cover;
     object-position: center;">
+    <!-- <div style="height: 72px; width: 100%; background-image: url('/static/images/webiste_logo_5.png'); background-size: cover; background-position: center;"></div> -->
+
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
