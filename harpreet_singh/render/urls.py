@@ -4,6 +4,8 @@ urlpatterns=[
     path("",views.home,name="home"),
     path("about-us/",views.about_us,name="about-us"),
     path("service/",views.service,name="service"),
-    path("contact/",views.contact,name="contact")
+    path("contact/",views.contact,name="contact"),
+    path("imprint/",views.imprint,name="imprint"),
+    path("data_protection/",views.data_protection,name="data_proctection")
     
 ]

@@ -13,3 +13,13 @@ def contact(request):
 
 def about_us(request):
     return render(request,"about.html")
+
+
+def data_protection(request):
+    return render(request,"data_protection.html")
+    
+    
+
+def imprint(request):
+    return render(request,"imprint.html")
+    
