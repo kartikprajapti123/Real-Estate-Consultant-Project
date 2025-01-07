@@ -53,21 +53,25 @@
       text-align: center;
       display: none;
       z-index: 9999;
+      box-sizing: border-box;
     }
-
+  
     .cookie-content {
       display: flex;
       justify-content: center;
       align-items: center;
       max-width: 900px;
       margin: 0 auto;
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      gap: 10px; /* Spacing between buttons */
     }
-
+  
     .cookie-consent p {
       margin-right: 20px;
       font-size: 14px;
+      flex: 1; /* Allow text to take up available space */
     }
-
+  
     .accept-button {
       background-color: #ffcc00;
       border: none;
@@ -78,9 +82,32 @@
       border-radius: 5px;
       transition: background-color 0.3s;
     }
-
+  
     .accept-button:hover {
       background-color: #e6b800;
+    }
+  
+    /* Make the buttons stack vertically on small screens */
+    @media (max-width: 600px) {
+      .cookie-content {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .cookie-consent p {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+  
+      .accept-button {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+      }
+  
+      .accept-button:last-child {
+        margin-bottom: 0;
+      }
     }
   </style>
   {% block style %}
@@ -247,11 +274,11 @@
     <div class="cookie-consent">
       <div class="cookie-content">
         <p>Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern. Wenn Sie auf „Akzeptieren“ klicken, stimmen Sie unserer Verwendung von Cookies zu.</p>
-        <button id="accept-cookies" class="accept-button" >Akzeptieren</button>
-        <button id="reject-cookies" class="accept-button" style="margin-left:10px;" >Ablehnen</button>
-
+        <button id="accept-cookies" class="accept-button">Akzeptieren</button>
+        <button id="reject-cookies" class="accept-button" style="margin-left:10px;">Ablehnen</button>
       </div>
     </div>
+    
 
   <!-- jQery -->
   <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
