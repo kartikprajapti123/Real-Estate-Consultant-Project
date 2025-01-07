@@ -313,7 +313,7 @@
     // Cookie consent script
     window.onload = function() {
       var consent = localStorage.getItem('cookie-consent');
-      if (consent=="false" || consent=="") {
+      if (consent=="false" || consent=="" || !consent) {
         document.querySelector('.cookie-consent').style.display = 'block';
       }
     }
