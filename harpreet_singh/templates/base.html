@@ -313,7 +313,7 @@
     // Cookie consent script
     window.onload = function() {
       var consent = localStorage.getItem('cookie-consent');
-      if (!consent) {
+      if (consent=="false" || consent=="") {
         document.querySelector('.cookie-consent').style.display = 'block';
       }
     }
@@ -324,7 +324,7 @@
     });
 
     document.getElementById('reject-cookies').addEventListener('click', function () {
-      localStorage.setItem('cookie-consent', 'rejected');
+      localStorage.setItem('cookie-consent', 'false');
       document.querySelector('.cookie-consent').style.display = 'none';
     });
   </script>
