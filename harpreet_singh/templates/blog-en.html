@@ -1,0 +1,317 @@
+{% extends "base-en.html" %}
+<!-- End of header section -->
+<!-- Slider Section -->
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block style %}
+<style>
+    /* Theme Colors */
+    :root {
+        --primary: #04233b;
+        --text-color: #363738;
+        --background-color: #eee;
+        --theme-color: #04233b;
+    }
+
+    /* General Body and Background */
+    body {
+        background: var(--background-color);
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Date Box */
+    .date__box {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ccc;
+        border: 4px solid;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+
+    .date__box .date__day {
+        font-size: 22px;
+    }
+
+    /* Blog Card */
+    .blog-card {
+        position: relative;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .blog-card .date__box {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: 300ms ease-in-out;
+    }
+
+    .blog-card__background,
+    .card__background--layer {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .blog-card__background {
+        padding: 15px;
+        background: white;
+    }
+
+    .card__background--wrapper {
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card__background--main {
+        height: 100%;
+        position: relative;
+        transition: 300ms ease-in-out;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .card__background--layer {
+        z-index: 0;
+        opacity: 0;
+        background: rgba(51, 51, 51, 0.9);
+        transition: 300ms ease-in-out;
+    }
+
+    /* Blog Card Hover Effects */
+    .blog-card:hover .date__box {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .blog-card:hover .card__background--main {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .blog-card:hover .card__background--layer {
+        opacity: 1;
+    }
+
+    .blog-card:hover .blog-card__info h5 {
+        color: var(--primary);
+    }
+
+    /* Blog Card Header */
+    .blog-card__head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Blog Card Info */
+    .blog-card__info {
+        z-index: 10;
+        background: white;
+        padding: 20px 15px;
+    }
+
+    /* Icon Links */
+    a.icon-link {
+        color: var(--text-color);
+        transition: 200ms ease-in-out;
+    }
+
+    a.icon-link i {
+        color: var(--primary);
+    }
+
+    a.icon-link:hover {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    /* Button Styles */
+    .btn {
+        background: white;
+        color: var(--text-color);
+        font-weight: bold;
+        outline: none;
+        box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        border-radius: 0;
+        height: 50px;
+        line-height: 50px;
+        display: inline-block;
+        padding: 0;
+        border: none;
+    }
+
+    .btn:focus {
+        box-shadow: none;
+    }
+
+    .btn:hover {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    /* Button with Icon */
+    .btn.btn--with-icon {
+        padding-right: 20px;
+    }
+
+    .btn.btn--with-icon i {
+        padding: 0px 30px 0px 15px;
+        margin-right: 10px;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: bottom;
+        color: white;
+        background: var(--primary);
+        clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+    }
+
+    /* Button Only Icon */
+    .btn.btn--only-icon {
+        width: 50px;
+    }
+
+    /* Pagination Styles */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 5px;
+    }
+
+    .pagination a:hover {
+        background-color: #033b4d;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+
+<div class="container">
+    <div>
+        <h1 style="color: #04233b; text-align: center; padding: 20px; font-size: 45px; font-weight: 600;">Blogs</h1>
+    </div>
+    <div class="row" id="blogs">
+    </div>
+
+    <!-- Pagination Buttons -->
+    <div class="pagination" style="margin-bottom: 30px;">
+        <a href="#">&laquo; Previous</a>
+        <a href="#">Next &raquo;</a>
+    </div>
+
+</div>
+
+{% endblock body %}
+
+{% block script %}
+
+<script>
+    let currentPage = 1; // to keep track of the current page
+
+    // Function to fetch and display paginated blogs
+    async function fetch_paginated_blog() {
+        console.log("called")
+        await fetch(`${window.location.origin}/api/blog/?page=${currentPage}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Check if we have blog results
+                if (data.results) {
+                    const blogsContainer = document.getElementById("blogs");
+                    blogsContainer.innerHTML = ""; // Clear the existing blogs before updating
+
+                    // Loop through the blog results and display them
+                    data.results.data.forEach((blog) => {
+                        const blogDate = new Date(blog.created_at); // Convert date to Date object
+                        const day = blogDate.getDate();
+                        const month = blogDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+                        const year = blogDate.getFullYear();
+                        // Truncate the title and description if they exceed the limit
+                        const truncatedTitle = blog.title.length > 50 ? blog.title.substring(0, 20) + '...' : blog.title;
+                        const truncatedDescription = blog.description.length > 50 ? blog.description.substring(0, 50) + '...' : blog.description;
+
+                        // Create the blog card dynamically
+                        const blogCard = `
+              <div class="col-md-4 col-sm-12">
+                <article class="blog-card">
+                  <div style="text-align:center;">
+                    <img src="${window.location.origin}${blog.blog_image}" style="width: 250px; height: 250px;">
+                  </div>
+                    
+                  <div class="blog-card__info">
+                    <h5>${truncatedTitle}</h5>
+                    <p><i class="fa fa-pencil-square-o"></i> Harpreet Singh   <span style="float:right;" >
+                      <span >${day}</span>
+                      <span >${month}</span>
+                      <span >${year}</span>
+
+                    </span></p>
+                    <a href="/en/blog-detail/${blog.title}/" class="btn btn--with-icon"><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</a>
+                  </div>
+                </article>
+              </div>
+            `;
+
+                        blogsContainer.innerHTML += blogCard;
+                    });
+
+                    // Pagination logic
+                    const paginationContainer = document.querySelector(".pagination");
+                    paginationContainer.innerHTML = ""; // Clear previous pagination
+
+                    // Add "Previous" button if it's not the first page
+                    if (data.previous) {
+                        paginationContainer.innerHTML += `<a href="javascript:void(0);" onclick="changePage(${currentPage - 1})">&laquo; Previous</a>`;
+                    }
+
+                    // Add "Next" button if there's a next page
+                    if (data.next) {
+                        paginationContainer.innerHTML += `<a href="javascript:void(0);" onclick="changePage(${currentPage + 1})">Next &raquo;</a>`;
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching blog data:", error);
+            });
+    }
+
+    // Function to handle page changes
+    function changePage(page) {
+        if (page > 0) {
+            currentPage = page;
+            fetch_paginated_blog();
+        }
+    }
+
+    // Call the function to load blogs on page load
+    fetch_paginated_blog();
+</script>
+
+{% endblock script %}

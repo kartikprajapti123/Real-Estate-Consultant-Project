@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="google" content="notranslate">
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="/static/images/webiste_logo_5.png" type="">
+
+  <title> Blog </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+  <style>
+    @supports (-webkit-touch-callout: none) {
+      #website_logo {
+          height: 72px;
+          width: auto;
+          object-fit: cover;
+          object-position: center;
+      }
+    }
+    .cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      display: none;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+  
+    .cookie-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      gap: 10px; /* Spacing between buttons */
+    }
+  
+    .cookie-consent p {
+      margin-right: 20px;
+      font-size: 14px;
+      flex: 1; /* Allow text to take up available space */
+    }
+  
+    .accept-button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+  
+    .accept-button:hover {
+      background-color: #e6b800;
+    }
+  
+    /* Make the buttons stack vertically on small screens */
+    @media (max-width: 600px) {
+      .cookie-content {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .cookie-consent p {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+  
+      .accept-button {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+      }
+  
+      .accept-button:last-child {
+        margin-bottom: 0;
+      }
+    }
+        /* Theme Colors */
+        :root {
+            --primary: #04233b;
+            --text-color: #363738;
+            --background-color: #eee;
+            --theme-color: #04233b;
+        }
+    
+        /* General Body and Background */
+        .body-background {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+    
+        /* Blog Detail Container */
+        .blog-detail-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+    
+        /* Blog Title */
+        .blog-title {
+            color: var(--primary);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+    
+        /* Blog Image */
+        .blog-image {
+            width: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    
+        /* Date Info */
+        .date-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    
+        .date-info span {
+            display: inline-block;
+        }
+    
+        /* Blog Content */
+        .blog-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-color);
+            text-align: justify;
+            width:-webkit-fill-available;
+        }
+    
+        /* Author Section */
+        .author-section {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+    
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+    
+        .author-name {
+            margin: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+    
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .blog-detail-container {
+                padding: 15px;
+            }
+    
+            .blog-title {
+                font-size: 30px;
+            }
+    
+            .date-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+            .blog-content {
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            .blog-image {
+                max-width: 320px;
+            }
+        }
+        
+.cog-wheel1, .cog-wheel2{
+    transform:scale(0.7);
+  }
+  
+  .cog1, .cog2{
+    width:40vmin;
+    height:40vmin;
+    border-radius:50%;
+    border:6vmin solid #f3c623;
+    position: relative;
+  }
+  
+  
+  .cog2{
+    border:6vmin solid #4f8a8b;
+  }
+  
+  .top, .down, .left, .right, .left-top, .left-down, .right-top, .right-down{
+    width:10vmin;
+    height:10vmin;
+    background-color: #f3c623;
+    position: absolute;
+  }
+  
+  .cog2 .top,.cog2  .down,.cog2  .left,.cog2  .right,.cog2  .left-top,.cog2  .left-down,.cog2  .right-top,.cog2  .right-down{
+    background-color: #4f8a8b;
+  }
+  
+  .top{
+    top:-14vmin;
+    left:9vmin;
+  }
+  
+  .down{
+    bottom:-14vmin;
+    left:9vmin;
+  }
+  
+  .left{
+    left:-14vmin;
+    top:9vmin;
+  }
+  
+  .right{
+    right:-14vmin;
+    top:9vmin;
+  }
+  
+  .left-top{
+    transform:rotateZ(-45deg);
+    left:-8vmin;
+    top:-8vmin;
+  }
+  
+  .left-down{
+    transform:rotateZ(45deg);
+    left:-8vmin;
+    top:25vmin;
+  }
+  
+  .right-top{
+    transform:rotateZ(45deg);
+    right:-8vmin;
+    top:-8vmin;
+  }
+  
+  .right-down{
+    transform:rotateZ(-45deg);
+    right:-8vmin;
+    top:25vmin;
+  }
+  
+  .cog2{
+    position: relative;
+    left:-10.2vmin;
+    bottom:10vmin;
+  }
+  
+  h1{
+    color:#142833;
+  }
+  
+  .first-four{
+    position: relative;
+    left:6vmin;
+    font-size:40vmin;
+  }
+  
+  .second-four{
+    position: relative;
+    right:18vmin;
+    z-index: -1;
+    font-size:40vmin;
+  }
+  
+  .wrong-para{
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    bottom:15vmin;
+    padding:3vmin 12vmin 3vmin 3vmin;
+    font-weight:600;
+    color:#092532;
+  }
+  .container-404{
+
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  left:6vmin;
+  text-align: center;
+  }
+  </style>
+  {% block style %}
+    
+  {% endblock style %}
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="#" >
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Anrufen : +49 171 6577439
+              </span>
+            </a>
+            <a href="mailto:info@ghotra-immobilien.com" target="_blank">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                E-Mail : info@ghotra-immobilien.com
+              </span>
+            </a>
+            <a href="https://maps.app.goo.gl/CFgeet43kGDfbqyJ6" target="_blank">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Standort
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom" style="padding: 0px;">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="/">
+              <img src="/static/images/webiste_logo_5.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item" id="home">
+                  <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item" id="services">
+                  <a class="nav-link" href="/service/">Dienstleistungen</a>
+                </li>
+                <li class="nav-item" id="about">
+                  <a class="nav-link" href="/about-us/">Über uns</a>
+                </li>
+                <li class="nav-item" id="contact">
+                  <a class="nav-link" href="/contact/">Kontakt</a>
+                </li>
+                <li class="nav-item" id="contact">
+                    <a class="nav-link" href="/blog/">Blogs</a>
+                  </li>
+                <li class="nav-item dropdown" style="position: relative; list-style: none; display: inline-block;">
+                    <a 
+                        class="nav-link dropdown-toggle" 
+                        
+                        id="languageDropdown" 
+                        role="button" 
+                        style="text-decoration: none; color: black; cursor: pointer; display: inline-block; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 5px;">
+                        Language
+                    </a>
+                    <ul class="dropdown-menu" 
+                        style="list-style: none; margin: 0; padding: 0; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ddd; border-radius: 5px; display: none; z-index: 1000; min-width: 150px;">
+                        <li style="padding: 0;">
+                            <a class="dropdown-item" id="language_english_id" href="" 
+                               style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="English" width="20" style="margin-right: 10px;">
+                                Englisch
+                            </a>
+                        </li>
+                        <li style="padding: 0;">
+                            <a class="dropdown-item" id="language_german_id" href="" 
+                               style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                                <img src="https://flagcdn.com/w40/de.png" alt="German" width="20" style="margin-right: 10px;">
+                                Deutsch
+                            </a>
+                        </li>
+                    </ul>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- <div class="container" style="display: grid;place-items:center;"> -->
+
+<div class="blog-detail-container body-background" id="page_content">
+    <h1 class="blog-title" id="blog_title"></h1>
+    <img class="blog-image" id="blog_image" src="#" alt="Blog Image">
+
+    <div class="date-info">
+        <span id="blog_date"></span>
+        <span><b>Author:</b> Harpreet Singh</span>
+    </div>
+
+    <div class="blog-content" id="blog_description">
+    </div>
+</div>
+
+<div class="container-404"  id="404_content" style="display: none;" >
+    <h1 class="first-four">4</h1>
+    <div class="cog-wheel1">
+        <div class="cog1">
+          <div class="top"></div>
+          <div class="down"></div>
+          <div class="left-top"></div>
+          <div class="left-down"></div>
+          <div class="right-top"></div>
+          <div class="right-down"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+      </div>
+    </div>
+    
+    <div class="cog-wheel2"> 
+      <div class="cog2">
+          <div class="top"></div>
+          <div class="down"></div>
+          <div class="left-top"></div>
+          <div class="left-down"></div>
+          <div class="right-top"></div>
+          <div class="right-down"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+      </div>
+    </div>
+   <h1 class="second-four">4</h1>
+    <p class="wrong-para">Uh Oh! Page not found!</p>
+  </div>
+<!-- </div> -->
+
+<section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Adresse
+            </h4>
+            <div class="contact_link_box">
+              <a href="https://maps.app.goo.gl/CFgeet43kGDfbqyJ6" target="_blank">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Steinauer Straße 10 
+                  60386 Frankfurt am Main
+                </span>
+              </a>
+              <a href="#">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Anrufen +49 171 6577439
+                </span>
+              </a>
+              <a href="mailto:info@ghotra-immobilien.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  info@ghotra-immobilien.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="https://www.facebook.com/share/R4SP8WTwxFbcX2T5/?mibextid=qi2Omg" target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>Immobilien & Beratung</h4>
+            <p>
+              Wir bieten Expertenservices in Immobilienverkauf, Investitionen und Beratung, um Ihnen zu helfen, Ihre Immobilienziele zu erreichen.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Startseite
+              </a>
+              <a class="" href="/about-us/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Über uns
+              </a>
+              <a class="" href="/service/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Dienstleistungen
+              </a>
+              <a class="" href="/contact/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Kontakt
+              </a>
+              <a class="" href="/blog/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Blogs
+            </a>
+              <a class="" href="/data_protection/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Datenschutz
+            </a>
+            <a class="" href="/imprint/">
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                Impressum
+            </a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> Alle Rechte vorbehalten von
+        <a href="https://kartikprajapati.com">kartikprajapati.com</a>
+        <a href="#">+91 9106566253</a>
+      </p>
+    </div>
+</section>
+
+<div class="cookie-consent">
+  <div class="cookie-content">
+    <p>Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern. Wenn Sie auf „Akzeptieren“ klicken, stimmen Sie unserer Verwendung von Cookies zu.</p>
+    <button id="accept-cookies" class="accept-button">Akzeptieren</button>
+    <button id="reject-cookies" class="accept-button" style="margin-left:10px;">Ablehnen</button>
+  </div>
+</div>
+
+
+<!-- jQery -->
+<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!-- bootstrap js -->
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<!-- owl slider -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- custom js -->
+<script type="text/javascript" src="/static/js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+
+<script>
+const path = window.location.pathname;
+if (path === "/") {
+    document.getElementById("home").classList.add("active");
+    document.getElementById("language_german_id").href = "/";
+    document.getElementById("language_english_id").href = "/en/index/";
+} else if (path === "/service/") {
+    document.getElementById("services").classList.add("active");
+    document.getElementById("language_german_id").href = "/service/";
+    document.getElementById("language_english_id").href = "/en/service/";
+} else if (path === "/about-us/") {
+    document.getElementById("about").classList.add("active");
+    document.getElementById("language_german_id").href = "/about-us/";
+    document.getElementById("language_english_id").href = "/en/about-us/";
+} else if (path === "/contact/") {
+    document.getElementById("contact").classList.add("active");
+    document.getElementById("language_german_id").href = "/contact/";
+    document.getElementById("language_english_id").href = "/en/contact/";
+}else if (path === "/blog/") {
+    document.getElementById("blog").classList.add("active");
+    document.getElementById("language_german_id").href = "/en/blog/";
+    document.getElementById("language_english_id").href = "/en/blog/";
+
+} else if (path.includes("/blog-detail/")) {
+    // If the path is a blog detail page with dynamic slug
+    document.getElementById("language_german_id").href = path;
+    document.getElementById("language_english_id").href = "/en" + path.replace("/blog-detail/", "/blog-detail/");
+}
+
+// Cookie consent script
+window.onload = function() {
+  var consent = localStorage.getItem('cookie-consent');
+  if (consent=="false" || consent=="" || !consent) {
+    document.querySelector('.cookie-consent').style.display = 'block';
+  }
+}
+
+document.getElementById('accept-cookies').addEventListener('click', function() {
+  localStorage.setItem('cookie-consent', 'true');
+  document.querySelector('.cookie-consent').style.display = 'none';
+});
+
+document.getElementById('reject-cookies').addEventListener('click', function () {
+  localStorage.setItem('cookie-consent', 'false');
+  document.querySelector('.cookie-consent').style.display = 'none';
+});
+const blogSlug = window.location.pathname.split('/').filter(Boolean).pop(); 
+    fetch(`${window.location.origin}/api/blog/blog_by_title/?title=${blogSlug}`, {
+        "method": "GET",
+        "headers": {
+            "content-type": "application/json"
+        },
+    }).then((response) => {
+        return response.json();
+    }).then((response) => {
+        if (response.success) {
+            const createdAt = new Date(response.data.created_at);
+            const formattedDate = createdAt.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            });
+            document.getElementById("blog_date").innerHTML = `<b>Published on:</b> ${formattedDate}`;
+            document.getElementById("blog_title").innerHTML = response.data.title;
+            document.getElementById("blog_description").innerHTML = response.data.description;
+            document.getElementById("blog_image").src = response.data.blog_image;
+        }
+        if (response.success==false){
+            document.getElementById("page_content").style.display="none"
+            document.getElementById("404_content").style.display="flex"
+
+            
+        }
+    })
+    let t1 = gsap.timeline();
+let t2 = gsap.timeline();
+let t3 = gsap.timeline();
+
+t1.to(".cog1",
+{
+  transformOrigin:"50% 50%",
+  rotation:"+=360",
+  repeat:-1,
+  ease:Linear.easeNone,
+  duration:8
+});
+
+t2.to(".cog2",
+{
+  transformOrigin:"50% 50%",
+  rotation:"-=360",
+  repeat:-1,
+  ease:Linear.easeNone,
+  duration:8
+});
+
+t3.fromTo(".wrong-para",
+{
+  opacity:0
+},
+{
+  opacity:1,
+  duration:1,
+  stagger:{
+    repeat:-1,
+    yoyo:true
+  }
+});
+const dropdown = document.querySelector('.nav-item.dropdown');
+      const menu = dropdown.querySelector('.dropdown-menu');
+    
+      dropdown.addEventListener('mouseover', () => {
+        menu.style.display = 'block';
+      });
+    
+      dropdown.addEventListener('mouseout', () => {
+        menu.style.display = 'none';
+      });
+</script>
+
+
+
+</body>
+</html>
+

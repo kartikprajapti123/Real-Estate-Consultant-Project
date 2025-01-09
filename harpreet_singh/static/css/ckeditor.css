@@ -1,0 +1,27 @@
+.ck-editor__editable {
+    color: black; /* Default text color */
+    font-size: 16px; /* Default font size */
+}
+
+/* custom_admin.css */
+
+/* Hide/* custom_admin.css */
+
+/* Hide the three-dot button when screen width is less than 1200px */
+@media (max-width: 1199px) {
+    .ck-toolbar__item[title="More options"] {
+        display: none !important;  /* Hide the three-dot button */
+    }
+}
+
+/* Show the three-dot button when screen width is 1200px or more */
+@media (min-width: 1200px) {
+    .ck-toolbar__item[title="More options"] {
+        display: inline-block !important;  /* Make sure it is visible */
+    }
+}
+
+
+.ck .ck-toolbar__items{
+    flex-wrap: wrap !important;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="HIN">
 
 <head>
   <!-- Basic -->
@@ -13,6 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/static/images/webiste_logo_5.png" type="">
+  
 
   <title> {% block title %}
     
@@ -170,6 +171,36 @@
                 <li class="nav-item" id="contact">
                   <a class="nav-link" href="/contact/">Kontakt</a>
                 </li>
+                <li class="nav-item" id="blog">
+                  <a class="nav-link" href="/blog/">Blogs</a>
+                </li>
+                <li class="nav-item dropdown" style="position: relative; list-style: none; display: inline-block;">
+                  <a 
+                      class="nav-link dropdown-toggle" 
+                      
+                      id="languageDropdown" 
+                      role="button" 
+                      style="text-decoration: none; color: black; cursor: pointer; display: inline-block; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 5px;">
+                      Language
+                  </a>
+                  <ul class="dropdown-menu" 
+                      style="list-style: none; margin: 0; padding: 0; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ddd; border-radius: 5px; display: none; z-index: 1000; min-width: 150px;">
+                      <li style="padding: 0;">
+                          <a class="dropdown-item" id="language_english_id" href="" 
+                             style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                              <img src="https://flagcdn.com/w40/gb.png" alt="English" width="20" style="margin-right: 10px;">
+                              Englisch
+                          </a>
+                      </li>
+                      <li style="padding: 0;">
+                          <a class="dropdown-item" id="language_german_id" href="" 
+                             style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                              <img src="https://flagcdn.com/w40/de.png" alt="German" width="20" style="margin-right: 10px;">
+                              Deutsch
+                          </a>
+                      </li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </nav>
@@ -246,6 +277,10 @@
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Kontakt
                   </a>
+                  <a class="" href="/blog/">
+                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                    Blogs
+                  </a>
                   <a class="" href="/data_protection/">
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Datenschutz
@@ -254,6 +289,7 @@
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Impressum
                 </a>
+
                 </div>
               </div>
             </div>
@@ -292,6 +328,7 @@
   <script type="text/javascript" src="/static/js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 
   {% block script %}
     
@@ -302,13 +339,46 @@
 
     if (path === "/") {
       document.getElementById("home").classList.add("active");
-    } else if (path === "/service/") {
+      document.getElementById("language_german_id").href="/";
+      document.getElementById("language_english_id").href="/en/index/";
+
+
+  } else if (path === "/service/") {
       document.getElementById("services").classList.add("active");
-    } else if (path === "/about-us/") {
+      document.getElementById("language_german_id").href="/service/";
+      
+      document.getElementById("language_english_id").href="/en/service/";
+
+  } else if (path === "/about-us/") {
       document.getElementById("about").classList.add("active");
-    } else if (path === "/contact/") {
+      document.getElementById("language_german_id").href="/about-us/";
+
+      document.getElementById("language_english_id").href="/en/about-us/";
+
+  } else if (path === "/contact/") {
       document.getElementById("contact").classList.add("active");
-    }
+      document.getElementById("language_german_id").href="/contact/";
+
+      document.getElementById("language_english_id").href="/en/contact/";
+
+  } else if (path === "/blog/") {
+      document.getElementById("blog").classList.add("active");
+      document.getElementById("language_german_id").href="/blog/";
+      document.getElementById("language_english_id").href="/en/blog/";
+
+  }
+  else if (path === "/data_protection/") {
+    document.getElementById("language_german_id").href="/data_protection/";
+    document.getElementById("language_english_id").href="/en/data_protection/";
+
+}
+
+else if (path === "/imprint/") {
+  document.getElementById("language_german_id").href="/imprint/";
+  document.getElementById("language_english_id").href="/en/imprint/";
+
+}
+
 
     // Cookie consent script
     window.onload = function() {
@@ -327,6 +397,18 @@
       localStorage.setItem('cookie-consent', 'false');
       document.querySelector('.cookie-consent').style.display = 'none';
     });
+
+      // JavaScript to toggle dropdown on hover
+      const dropdown = document.querySelector('.nav-item.dropdown');
+      const menu = dropdown.querySelector('.dropdown-menu');
+    
+      dropdown.addEventListener('mouseover', () => {
+        menu.style.display = 'block';
+      });
+    
+      dropdown.addEventListener('mouseout', () => {
+        menu.style.display = 'none';
+      });
   </script>
 
   

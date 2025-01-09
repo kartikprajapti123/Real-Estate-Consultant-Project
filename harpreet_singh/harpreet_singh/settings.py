@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lt6&9x040^zmg89z8!q_#(%s(7jr@3umkzrx!89)wmi-wgjxcd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("debug")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "contact",
+    'django_ckeditor_5',
+    "Blog",
+    "ckeditor"
 ]
 
 MIDDLEWARE = [
@@ -103,14 +108,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'  # Set German time zone
 
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -133,7 +138,64 @@ EMAIL_HOST_USER = "kartikprajapati26122004@gmail.com"
 EMAIL_HOST_PASSWORD = "lcza wsye liez ddkk"
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|', 'bold', 'italic', 'underline', '|', 
+            'fontColor', 'fontBackgroundColor', 'fontSize', '|', 'bulletedList', 'numberedList', '|', 
+            'undo', 'redo', '|', 'sourceEditing'  # Add sourceEditing button
+        ],
+        'fontColor': {
+            'colors': [
+                {'color': 'black', 'label': 'Black'},
+                {'color': 'red', 'label': 'Red'},
+                {'color': 'green', 'label': 'Green'},
+                {'color': 'blue', 'label': 'Blue'},
+                {'color': 'yellow', 'label': 'Yellow'},
+            ]
+        },
+        'fontBackgroundColor': {
+            'colors': [
+                {'color': 'black', 'label': 'Black'},
+                {'color': 'red', 'label': 'Red'},
+                {'color': 'green', 'label': 'Green'},
+                {'color': 'blue', 'label': 'Blue'},
+                {'color': 'yellow', 'label': 'Yellow'},
+            ]
+        },
+        'fontSize': {
+            'options': ['default', 'small', 'big'],
+        },
+        'simpleUpload': {
+            'uploadUrl': '/media/',  # This URL handles image uploads
+            'headers': {
+                'X-CSRFToken': '{{ csrf_token }}',  # Ensure CSRF token is included
+            }
+        },
+        'defaultColor': 'black',
+        
+        'image': {
+            'toolbar': [
+                'imageTextAlternative', '|',
+        'imageStyle:alignLeft', 
+        'imageStyle:alignCenter',
+        'imageStyle:alignRight'
+            ],
+        },
+        
+        'height': 300,
+        'width': '100%',
+    },
+}
+
+MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_5_CUSTOM_CSS = 'css/ckeditor.css'
