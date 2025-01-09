@@ -139,10 +139,10 @@ EMAIL_HOST_PASSWORD = "lcza wsye liez ddkk"
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static'),
-]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS=[
+    # os.path.join(BASE_DIR,'static'),
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': [
