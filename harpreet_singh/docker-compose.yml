@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8000"
+
+    env_file:
+      - .env
+    command: >
+      sh -c "
+        python manage.py makemigrations &&
+        python manage.py migrate &&
+        python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - harpreet_singh_network
+    volumes:
+      - .:/app  
+      - harpreet_singh_volume:/app/data
+
+networks:
+  harpreet_singh_network:
+    driver: bridge
+
+volumes:
+  harpreet_singh_volume:
