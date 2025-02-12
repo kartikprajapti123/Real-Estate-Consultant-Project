@@ -21,5 +21,15 @@ urlpatterns=[
     path("en/blog-detail/<str:blog_name>/",views.en_blog_detail,name="en_blog_detail"),
     
     
+    path("chi/index/",views.chi_home,name="chi_home"),
+    path("chi/about-us/",views.chi_about_us,name="chi_about_us"),
+    path("chi/service/",views.chi_service,name="chi_service"),
+    path("chi/contact/",views.chi_contact,name="chi_contact"),
+    path("chi/imprint/",views.chi_imprint,name="chi_imprint"),
+    path("chi/data_protection/",views.chi_data_protection,name="chi_data_proctection"),
+    path("chi/blog/",views.chi_blog,name="chi_blog"),
+    path("chi/blog-detail/<str:blog_name>/",views.chi_blog_detail,name="chi_blog_detail"),
+    
+    
     
 ]

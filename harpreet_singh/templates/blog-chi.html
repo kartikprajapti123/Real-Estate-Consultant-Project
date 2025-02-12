@@ -1,0 +1,124 @@
+{% extends "base-chi.html" %}
+<!-- 标题区域 -->
+{% block title %}
+博客
+{% endblock title %}
+
+{% block style %}
+<style>
+    :root {
+        --primary: #04233b;
+        --text-color: #363738;
+        --background-color: #eee;
+        --theme-color: #04233b;
+    }
+
+    body {
+        background: var(--background-color);
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 5px;
+    }
+
+    .pagination a:hover {
+        background-color: #033b4d;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+
+<div class="container">
+    <div>
+        <h1 style="color: #04233b; text-align: center; padding: 20px; font-size: 45px; font-weight: 600;">博客</h1>
+    </div>
+    <div class="row" id="blogs">
+    </div>
+
+    <div class="pagination" style="margin-bottom: 30px;">
+        <a href="#">« 上一页</a>
+        <a href="#">下一页 »</a>
+    </div>
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+    let currentPage = 1;
+
+    async function fetch_paginated_blog() {
+        console.log("请求博客数据...");
+        await fetch(`${window.location.origin}/api/blog/?page=${currentPage}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.results) {
+                    const blogsContainer = document.getElementById("blogs");
+                    blogsContainer.innerHTML = "";
+                    data.results.data.forEach((blog) => {
+                        const blogDate = new Date(blog.created_at);
+                        const day = blogDate.getDate();
+                        const month = blogDate.toLocaleString('zh-CN', { month: 'short' }).toUpperCase();
+                        const year = blogDate.getFullYear();
+                        const truncatedTitle = blog.title.length > 50 ? blog.title.substring(0, 60) + '...' : blog.title;
+                        const blogCard = `
+              <div class="col-md-4 col-sm-12">
+                <article class="blog-card">
+                  <div style="text-align:center;">
+                    <img src="${window.location.origin}${blog.blog_image}" style="width: 250px; height: 250px;object-position:center;object-fit:cover;">
+                  </div>
+                  <div class="blog-card__info">
+                    <a href="/zh/blog-detail/${blog.title}/"><h5>${truncatedTitle}</h5></a>
+                    <p><i class="fa fa-pencil-square-o"></i> 哈普瑞特 
+                      <span style="float:right;">${day} ${month} ${year}</span>
+                    </p>
+                    <a href="/chi/blog-detail/${blog.title}/" class="btn btn--with-icon"><i class="btn-icon fa fa-long-arrow-right"></i>阅读更多</a>
+                  </div>
+                </article>
+              </div>`;
+                        blogsContainer.innerHTML += blogCard;
+                    });
+                    const paginationContainer = document.querySelector(".pagination");
+                    paginationContainer.innerHTML = "";
+                    if (data.previous) {
+                        paginationContainer.innerHTML += `<a href="javascript:void(0);" onclick="changePage(${currentPage - 1})">« 上一页</a>`;
+                    }
+                    if (data.next) {
+                        paginationContainer.innerHTML += `<a href="javascript:void(0);" onclick="changePage(${currentPage + 1})">下一页 »</a>`;
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error("获取博客数据时出错:", error);
+            });
+    }
+
+    function changePage(page) {
+        if (page > 0) {
+            currentPage = page;
+            fetch_paginated_blog();
+        }
+    }
+
+    fetch_paginated_blog();
+</script>
+{% endblock script %}

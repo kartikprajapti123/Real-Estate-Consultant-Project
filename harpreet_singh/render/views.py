@@ -71,3 +71,36 @@ def en_blog(request):
     
 def en_blog_detail(request,blog_name):
     return render(request,"blog-detail-en.html")
+
+
+# ///////////////////////////english end //////////////////////////
+
+def chi_home(request):
+    return render(request,"index-chi.html")
+
+def chi_service(request):
+    return render(request,"service-chi.html")
+
+def chi_contact(request):
+    return render(request,"contact-chi.html")
+
+def chi_about_us(request):
+    return render(request,"about-chi.html")
+
+
+def chi_data_protection(request):
+    return render(request,"data_protection-chi.html")
+    
+    
+
+def chi_imprint(request):
+    return render(request,"imprint-chi.html")
+    
+
+
+def chi_blog(request):
+    return render(request,"blog-chi.html")
+    
+    
+def chi_blog_detail(request,blog_name):
+    return render(request,"blog-detail-chi.html")
