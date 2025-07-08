@@ -104,3 +104,7 @@ def chi_blog(request):
     
 def chi_blog_detail(request,blog_name):
     return render(request,"blog-detail-chi.html")
+
+
+def google45af308f4d012cc3(request):
+    return render(request,"google45af308f4d012cc3.html")    

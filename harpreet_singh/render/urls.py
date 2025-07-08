@@ -2,6 +2,8 @@ from django.urls import path
 from render import views
 urlpatterns=[
     path("",views.home,name="home"),
+    path("google45af308f4d012cc3.html",views.google45af308f4d012cc3,name="google45af308f4d012cc3.html"),
+    
     path("about-us/",views.about_us,name="about-us"),
     path("service/",views.service,name="service"),
     path("contact/",views.contact,name="contact"),
