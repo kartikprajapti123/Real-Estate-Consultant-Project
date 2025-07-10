@@ -79,7 +79,7 @@ class BlogViewSet(ModelViewSet):
         if page is not None:
             serializer = self.serializer_class(page, many=True)
             return self.get_paginated_response(
-                {"success": True, "data": serializer.data}
+                serializer.data
             )
 
         serializer = self.serializer_class(queryset, many=True)

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "contact",
     'django_ckeditor_5',
     "Blog",
-    "ckeditor"
+    "ckeditor",
+    "Pdf_management",
 ]
 
 MIDDLEWARE = [

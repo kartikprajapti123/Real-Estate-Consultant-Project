@@ -4,12 +4,77 @@
 {% block title %}
   Startseite
 {% endblock title %}
+{% block style %}
+  <style>.pdf-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
 
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.pdf-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pdf-content {
+  padding: 20px;
+}
+
+.pdf-content h5 {
+  font-size: 20px;
+  margin: 10px 0 20px;
+  color: #04233b;
+  font-weight: 600;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #064d78;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #04233b;
+  color: white;
+}
+</style>
+{% endblock style %}
 {% block body %}
+
+<div id="downloadToast" style="
+  position: fixed;
+  top: 20px;
+  left: -400px;
+  background-color: #064d78;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 16px;
+  z-index: 9999;
+  transition: left 0.5s ease;
+">
+  PDF wurde erfolgreich heruntergeladen!
+</div>
+
   
 <section class="slider_section">
   <div class="slider_bg_box">
-    <img src="/static/images/slider-bg.jpg" alt="">
+    <img src="/static/images/istockphoto-1026040678-612x612.jpg" alt="" style="background: none">
   </div>
   <div id="customCarousel1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -24,10 +89,10 @@
                 <p>
                     Erleben Sie professionelle Immobiliengeschäfte mit erstklassiger Beratung. Ob Traumhaus, Verkauf oder strategische Beratung – wir bieten Ihnen maßgeschneiderte Lösungen, fundiertes Marktwissen und herausragende Ergebnisse.
                 </p>
-                <div class="btn-box">
-                    <a href="/contact/" class="btn1">
-                        Kontaktieren Sie uns
-                    </a>
+                <div>
+                   <a href="/book-a-appointment/" style="color: white;">
+    <button class="beautiful-button">Termin buchen</button>
+  </a>
                 </div>
             </div>
             </div>
@@ -45,10 +110,10 @@
                 <p>
                   Vom Verkauf von Wohn- und Gewerbeimmobilien bis zur strategischen Investitionsberatung – wir helfen Ihnen, den dynamischen Immobilienmarkt zu meistern. Mit unseren individuellen Lösungen treffen Sie informierte Entscheidungen, maximieren den Wert und erreichen Ihre Immobilienziele mit Vertrauen.
                 </p>
-                <div class="btn-box">
-                  <a href="/contact/" class="btn1">
-                    Kontaktieren Sie uns
-                  </a>
+                <div>
+                   <a href="/book-a-appointment/" style="color: white;">
+    <button class="beautiful-button">Termin buchen</button>
+  </a>
                 </div>
               </div>
             </div>
@@ -66,10 +131,10 @@
                 <p>
                   Navigieren Sie mit Vertrauen durch den Immobilienmarkt. Wir bieten Ihnen maßgeschneiderte Lösungen, vom Finden Ihrer Traumimmobilie bis zur Bestimmung des optimalen Verkaufspreises oder der strategischen Beratung für Investitionen.
                 </p>
-                <div class="btn-box">
-                  <a href="/contact/" class="btn1">
-                    Kontaktieren Sie uns
-                  </a>
+                <div>
+                   <a href="/book-a-appointment/" style="color: white;">
+    <button class="beautiful-button">Termin buchen</button>
+  </a>
                 </div>
               </div>
             </div>
@@ -86,9 +151,34 @@
 </section>
 
     <!-- End of slider section -->
+     <section style="padding: 20px 0; background-color: #f9fbfd; margin-top: 20px;">
+  <div class="container">
+    <div class="heading_container" style="text-align: center; margin-bottom: 40px;">
+      <h2>
+        Laden Sie <span>unsere PDFs herunter</span>
+      </h2>
+      <p>
+        Greifen Sie bequem auf unsere Broschüren, Leitfäden und Ressourcen zu. Klicken Sie unten, um sie anzusehen oder herunterzuladen.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center" style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-left: 16px;
+      padding-right: 10px;
+    " id="pdfsrow">
+      
+    </div>
+  </div>
+</section>
+
   
   <!-- Service Section -->
-  <section class="service_section layout_padding">
+  <section class="service_section layout_padding" style="padding: 20px;">
     <div class="service_container">
       <div class="container ">
         <div class="heading_container">
@@ -104,7 +194,7 @@
           ">
             <div class="box ">
               <div class="img-box">
-                <img src="/static/images/s1.png" alt="">
+                <img src="/static/images/porperty listing.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -123,7 +213,7 @@
           ">
             <div class="box ">
               <div class="img-box">
-                <img src="/static/images/s2.png" alt="">
+                <img src="/static/images/real estate consulting.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -142,7 +232,7 @@
           ">
             <div class="box ">
               <div class="img-box">
-                <img src="/static/images/s3.png" alt="">
+                <img src="/static/images/deal.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -161,7 +251,7 @@
           ">
             <div class="box ">
               <div class="img-box">
-                <img src="/static/images/s4.png" alt="">
+                <img src="/static/images/rising.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -330,5 +420,55 @@
           alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
       });
   };
+
+  function fetchpdfs() {
+  fetch(`${window.location.origin}/api/PdfManagemnt/?no_pagination=true`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      if (response.success == "True") {
+        let str = "";
+        data = response.data;
+        data.forEach((data) => {
+          str += `<div class="col-md-4 col-sm-6 mb-4">
+        <div class="pdf-card no-thumb" style="box-shadow: 0px 0px 10px gray;">
+          <div class="pdf-icon" style="padding: 15px; padding-bottom: 0px;">
+            <img src="/static/images/pdf.png" alt="">
+          </div>
+          <div class="pdf-content" style="padding-top: 0px;">
+            <h5>${data.pdf_name}</h5>
+            <a href="${data.pdf_file}" 
+               target="_blank" 
+               class="download-btn" 
+               download 
+               onclick="showDownloadToast()">
+               PDF herunterladen
+            </a>
+          </div>
+        </div>
+      </div>`;
+        });
+
+        document.getElementById("pdfsrow").innerHTML = str;
+      } else {
+        alert("Fehler beim Abrufen der PDFs");
+      }
+    });
+}
+
+fetchpdfs();
+
+
+function showDownloadToast() {
+  const toast = document.getElementById("downloadToast");
+  toast.style.left = "20px"; // Slide in
+  setTimeout(() => {
+    toast.style.left = "-400px"; // Slide out after 3 sec
+  }, 4000);
+}
+
 </script>
 {% endblock script %}

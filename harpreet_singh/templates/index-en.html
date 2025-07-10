@@ -2,14 +2,77 @@
 <!-- End of header section -->
 <!-- Slider Section -->
 {% block title %}
-  Homepage
+Homepage
 {% endblock title %}
+{% block style %}
+  <style>.pdf-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.pdf-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pdf-content {
+  padding: 20px;
+}
+
+.pdf-content h5 {
+  font-size: 20px;
+  margin: 10px 0 20px;
+  color: #04233b;
+  font-weight: 600;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #064d78;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #04233b;
+  color: white;
+}
+</style>
+{% endblock style %}
 
 {% block body %}
-  
+<div id="downloadToast" style="
+  position: fixed;
+  top: 20px;
+  left: -400px;
+  background-color: #064d78;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 16px;
+  z-index: 9999;
+  transition: left 0.5s ease;
+">
+  PDF downloaded successfully!
+</div>
 <section class="slider_section">
   <div class="slider_bg_box">
-    <img src="/static/images/slider-bg.jpg" alt="">
+    <img src="/static/images/istockphoto-1026040678-612x612.jpg" style="background:none" alt="">
   </div>
   <div id="customCarousel1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -19,17 +82,19 @@
             <div class="col-md-7">
               <div class="detail-box">
                 <h1 style="font-size: 30px;">
-                    Your Reliable Partner for Real Estate – Buy, Sell, Advise
+                  Your Reliable Partner for Real Estate – Buy, Sell, Advise
                 </h1>
                 <p>
-                    Experience professional real estate transactions with top-notch advice. Whether it's a dream home, selling, or strategic consultation – we offer tailored solutions, deep market knowledge, and outstanding results.
+                  Experience professional real estate transactions with top-notch advice. Whether it's a dream home,
+                  selling, or strategic consultation – we offer tailored solutions, deep market knowledge, and
+                  outstanding results.
                 </p>
-                <div class="btn-box">
-                    <a href="/en/contact/" class="btn1">
-                        Contact Us
-                    </a>
+                <div>
+                 <a href="/en/book-a-appointment/" style="color: white;">
+                                    <button class="beautiful-button">Book a Appointment</button></a>
+
                 </div>
-            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -43,12 +108,14 @@
                   Discover Real Estate Opportunities – Expert Advice for Your Success
                 </h1>
                 <p>
-                  From selling residential and commercial properties to strategic investment consulting – we help you navigate the dynamic real estate market. With our customized solutions, make informed decisions, maximize value, and achieve your real estate goals with confidence.
+                  From selling residential and commercial properties to strategic investment consulting – we help you
+                  navigate the dynamic real estate market. With our customized solutions, make informed decisions,
+                  maximize value, and achieve your real estate goals with confidence.
                 </p>
-                <div class="btn-box">
-                  <a href="/en/contact/" class="btn1">
-                    Contact Us
-                  </a>
+                <div>
+                  <a href="/en/book-a-appointment/" style="color: white;">
+                                    <button class="beautiful-button">Book a Appointment</button></a>
+
                 </div>
               </div>
             </div>
@@ -64,12 +131,13 @@
                   Expert Advice in Real Estate – Buy, Sell, Invest
                 </h1>
                 <p>
-                  Navigate the real estate market with confidence. We offer tailored solutions, from finding your dream property to determining the optimal selling price or strategic investment consulting.
+                  Navigate the real estate market with confidence. We offer tailored solutions, from finding your dream
+                  property to determining the optimal selling price or strategic investment consulting.
                 </p>
-                <div class="btn-box">
-                  <a href="/en/contact/" class="btn1">
-                    Contact Us
-                  </a>
+                <div>
+                 <a href="/en/book-a-appointment/" style="color: white;">
+                                    <button class="beautiful-button">Book a Appointment</button></a>
+
                 </div>
               </div>
             </div>
@@ -85,10 +153,39 @@
   </div>
 </section>
 
+<section style="padding: 20px 0; background-color: #f9fbfd;margin-top:20px;">
+  <div class="container">
+    <div class="heading_container" style="text-align: center; margin-bottom: 40px;">
+        <h2>
+          Download <span>Our PDFs</span>
+        </h2>
+        <p>
+          Access our brochures, guides, and resources conveniently. Click below to view or download.
+        </p>
+      </div>
+
+    </div>
+    <div class="container">
+
+      <div class="row justify-content-center" style="    display: flex
+      ;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    padding-left: 16px;
+    padding-right:10px;" id="pdfsrow">
+      
+      
+    </div>
+  </div>
+</div>
+</section>
+
+
 <!-- End of slider section -->
 
 <!-- Service Section -->
-<section class="service_section layout_padding">
+<section class="service_section layout_padding" style="padding: 20px;">
   <div class="service_container">
     <div class="container ">
       <div class="heading_container">
@@ -96,21 +193,24 @@
           Our <span>Services</span>
         </h2>
         <p>
-          We provide tailored solutions for the real estate market – from buying and selling properties to comprehensive advice and professional investment strategies. Trust our expertise to achieve your real estate goals safely and effectively.
+          We provide tailored solutions for the real estate market – from buying and selling properties to comprehensive
+          advice and professional investment strategies. Trust our expertise to achieve your real estate goals safely
+          and effectively.
         </p>
       </div>
       <div class="row">
-        <div class="col-md-6 "  style="max-width: fit-content;">
+        <div class="col-md-6 " style="max-width: fit-content;">
           <div class="box ">
             <div class="img-box">
-              <img src="/static/images/s1.png" alt="">
+              <img src="/static/images/porperty listing.png" alt="">
             </div>
             <div class="detail-box">
               <h5>
                 Property Sales & Listings
               </h5>
               <p>
-                We connect buyers with their dream properties and ensure that sellers achieve the best market value for their properties. Trust us to professionally manage the sales process from start to finish.
+                We connect buyers with their dream properties and ensure that sellers achieve the best market value for
+                their properties. Trust us to professionally manage the sales process from start to finish.
               </p>
               <a href="/en/contact/">
                 Contact Us
@@ -118,17 +218,18 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 "  style="max-width: fit-content;">
+        <div class="col-md-6 " style="max-width: fit-content;">
           <div class="box ">
             <div class="img-box">
-              <img src="/static/images/s2.png" alt="">
+              <img src="/static/images/real estate consulting.png" alt="">
             </div>
             <div class="detail-box">
               <h5>
                 Real Estate Consulting
               </h5>
               <p>
-                Benefit from our in-depth market analysis and strategic advice that helps you make the right decisions in a dynamic market and maximize returns.
+                Benefit from our in-depth market analysis and strategic advice that helps you make the right decisions
+                in a dynamic market and maximize returns.
               </p>
               <a href="/en/contact/">
                 Contact Us
@@ -136,17 +237,18 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6"  style="max-width: fit-content;">
+        <div class="col-md-6" style="max-width: fit-content;">
           <div class="box ">
             <div class="img-box">
-              <img src="/static/images/s3.png" alt="">
+              <img src="/static/images/deal.png" alt="">
             </div>
             <div class="detail-box">
               <h5>
                 Property Management
               </h5>
               <p>
-                We offer comprehensive services in managing your properties, from tenant selection to maintenance and rent collection – everything you need to relax and enjoy the process.
+                We offer comprehensive services in managing your properties, from tenant selection to maintenance and
+                rent collection – everything you need to relax and enjoy the process.
               </p>
               <a href="/en/contact/">
                 Contact Us
@@ -154,17 +256,18 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 "  style="max-width: fit-content;">
+        <div class="col-md-6 " style="max-width: fit-content;">
           <div class="box ">
             <div class="img-box">
-              <img src="/static/images/s4.png" alt="">
+              <img src="/static/images/rising.png" alt="">
             </div>
             <div class="detail-box">
               <h5>
                 Investment Opportunities
               </h5>
               <p>
-                We show you the best opportunities for real estate investments, identify growing markets, and help you successfully expand your portfolio.
+                We show you the best opportunities for real estate investments, identify growing markets, and help you
+                successfully expand your portfolio.
               </p>
               <a href="/en/contact/">
                 Contact Us
@@ -184,7 +287,7 @@
   <div class="container">
     <div class="row">
       <!-- Image Column -->
-      
+
       <!-- Text Column (full width after the image) -->
       <div class="col-md-6">
         <div class="detail-box">
@@ -194,12 +297,16 @@
             </h2>
           </div>
           <p>
-            Our focus is on professional and tailored real estate services. We help you achieve your real estate goals with strategic planning and expert knowledge – whether it's buying, selling, or investing.
+            Our focus is on professional and tailored real estate services. We help you achieve your real estate goals
+            with strategic planning and expert knowledge – whether it's buying, selling, or investing.
           </p>
           <ul>
-            <li><strong>Specialized Real Estate Expertise:</strong> Our team brings extensive experience in residential, commercial, and investment properties, offering you comprehensive advice and support.</li>
-            <li><strong>Personalized Service:</strong> We provide tailored solutions that are specifically designed for your real estate needs to achieve sustainable success.</li>
-            <li><strong>Market Knowledge at the Highest Level:</strong> With deep insights into local and national markets, we provide valuable analysis and strategic recommendations.</li>
+            <li><strong>Specialized Real Estate Expertise:</strong> Our team brings extensive experience in residential,
+              commercial, and investment properties, offering you comprehensive advice and support.</li>
+            <li><strong>Personalized Service:</strong> We provide tailored solutions that are specifically designed for
+              your real estate needs to achieve sustainable success.</li>
+            <li><strong>Market Knowledge at the Highest Level:</strong> With deep insights into local and national
+              markets, we provide valuable analysis and strategic recommendations.</li>
           </ul>
           <a href="/en/about-us/" class="btn btn-primary">
             Learn More
@@ -208,13 +315,14 @@
       </div>
       <div class="col-md-6">
         <div class="img-box">
-          <img src="/static/images/harpreet_singh (1).jfif" alt="Real estate agent" class="img-fluid" style="width: 100%; background: #eceff4; height: auto; max-height: 523px; object-position: top; max-width: 100%; display: block; margin: auto; object-fit: cover; max-height: 585px;">
+          <img src="/static/images/harpreet_singh (1).jfif" alt="Real estate agent" class="img-fluid"
+            style="width: 100%; background: #eceff4; height: auto; max-height: 523px; object-position: top; max-width: 100%; display: block; margin: auto; object-fit: cover; max-height: 585px;">
         </div>
       </div>
     </div>
   </div>
 </section>
-  
+
 <!-- End of About Section -->
 
 <!-- Contact Section -->
@@ -230,83 +338,136 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-lg-4 col-md-5 offset-md-1">
-          <div class="form_container contact-form">
-            <form id="contact_form">
-              <div>
-                <input type="text" placeholder="User Name" id="username" />
-              </div>
-              <div>
-                <input type="email" placeholder="E-Mail" id="email" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" id="phone" />
-              </div>
-              <div>
-                <textarea type="text" class="message-box" placeholder="Message" id="message" style="width: 100%;border: none;height: 100px;margin-bottom: 25px;padding-left: 15px;outline: none;color: #101010;-webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);"></textarea>
-              </div>
-              <div class="btn_box" role="submit">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map" style="padding-top: 0px;padding-left:10px;padding-right:10px;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.5114982596!2d8.755819975464936!3d50.13286241018137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0e37132a398f%3A0x41def0601c517692!2sSteinauer%20Str.%2010%2C%2060386%20Frankfurt%20am%20Main%2C%20Germany!5e0!3m2!1sen!2sin!4v1735835654216!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="col-lg-4 col-md-5 offset-md-1">
+        <div class="form_container contact-form">
+          <form id="contact_form">
+            <div>
+              <input type="text" placeholder="User Name" id="username" />
             </div>
+            <div>
+              <input type="email" placeholder="E-Mail" id="email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone Number" id="phone" />
+            </div>
+            <div>
+              <textarea type="text" class="message-box" placeholder="Message" id="message"
+                style="width: 100%;border: none;height: 100px;margin-bottom: 25px;padding-left: 15px;outline: none;color: #101010;-webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);"></textarea>
+            </div>
+            <div class="btn_box" role="submit">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-6 px-0">
+        <div class="map_container">
+          <div class="map" style="padding-top: 0px;padding-left:10px;padding-right:10px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.5114982596!2d8.755819975464936!3d50.13286241018137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0e37132a398f%3A0x41def0601c517692!2sSteinauer%20Str.%2010%2C%2060386%20Frankfurt%20am%20Main%2C%20Germany!5e0!3m2!1sen!2sin!4v1735835654216!5m2!1sen!2sin"
+              width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        
       </div>
+
+    </div>
   </div>
 </section>
 {% endblock body %}
 
 
 {% block script %}
-  <script>
-    document.getElementById("contact_form").onsubmit = (e) => {
-      e.preventDefault();  // Verhindern der Formularübermittlung und Neuladen
-  
-      let username = document.getElementById("username")
-      let email = document.getElementById("email")
-      let phone = document.getElementById("phone")
-      let message = document.getElementById("message")
-      let data = {
-          "username": username.value.trim(),
-          "email": email.value.trim(),
-          "phone": phone.value.trim(),
-          "message": message.value.trim()
-      };
-  
-      fetch(`${window.location.origin}/api/contact/`, {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-      })
+<script>
+  document.getElementById("contact_form").onsubmit = (e) => {
+    e.preventDefault();  // Verhindern der Formularübermittlung und Neuladen
+
+    let username = document.getElementById("username")
+    let email = document.getElementById("email")
+    let phone = document.getElementById("phone")
+    let message = document.getElementById("message")
+    let data = {
+      "username": username.value.trim(),
+      "email": email.value.trim(),
+      "phone": phone.value.trim(),
+      "message": message.value.trim()
+    };
+
+    fetch(`${window.location.origin}/api/contact/`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
       .then((response) => response.json())
       .then((response) => {
-          if (response.success) {
-            username.value=""
-            email.value=""
-            phone.value=""
-            message.value=""
-            alert(response.message);
-              
-          } else {
-              alert(response.message);
-          }
+        if (response.success) {
+          username.value = ""
+          email.value = ""
+          phone.value = ""
+          message.value = ""
+          alert(response.message);
+
+        } else {
+          alert(response.message);
+        }
       })
       .catch((error) => {
-          console.error('Error:', error);
-          alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        console.error('Error:', error);
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
       });
   };
+
+  function fetchpdfs() {
+  fetch(`${window.location.origin}/api/PdfManagemnt/?no_pagination=true`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      if (response.success == "True") {
+        let str = "";
+        data = response.data;
+        data.forEach((data) => {
+          str += `<div class="col-md-4 col-sm-6 mb-4">
+        <div class="pdf-card no-thumb" style="box-shadow: 0px 0px 10px gray;">
+          <div class="pdf-icon" style="padding: 15px; padding-bottom: 0px;">
+            <img src="/static/images/pdf.png" alt="">
+          </div>
+          <div class="pdf-content" style="padding-top: 0px;">
+            <h5>${data.pdf_name}</h5>
+            <a href="${data.pdf_file}" 
+               target="_blank" 
+               class="download-btn" 
+               download 
+               onclick="showDownloadToast()">
+               Download PDF
+            </a>
+          </div>
+        </div>
+      </div>`;
+        });
+
+        document.getElementById("pdfsrow").innerHTML = str;
+      } else {
+        alert("Error while fetching PDFs");
+      }
+    });
+}
+
+fetchpdfs();
+
+function showDownloadToast() {
+  const toast = document.getElementById("downloadToast");
+  toast.style.left = "20px"; // Slide in
+  setTimeout(() => {
+    toast.style.left = "-400px"; // Slide out after 3 sec
+  }, 4000);
+}
+
 </script>
 {% endblock script %}

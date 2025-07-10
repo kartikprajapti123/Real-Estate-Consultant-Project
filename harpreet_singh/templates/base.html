@@ -110,6 +110,30 @@
         margin-bottom: 0;
       }
     }
+      .beautiful-button {
+  background: linear-gradient(135deg, #04233b, #064d78);
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  margin:5px;
+  margin:5px 20px;
+
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.beautiful-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.beautiful-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
   </style>
   {% block style %}
     
@@ -150,7 +174,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="/">
-              <img src="/static/images/webiste_logo_5.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
+              <img src="/static/images/website logo german.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,7 +182,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
+              <ul class="navbar-nav" style="justify-content: center;align-items:center;">
                 <li class="nav-item" id="home">
                   <a class="nav-link" href="/">Startseite</a>
                 </li>
@@ -171,9 +195,10 @@
                 <li class="nav-item" id="contact">
                   <a class="nav-link" href="/contact/">Kontakt</a>
                 </li>
-                <li class="nav-item" id="blog">
-                  <a class="nav-link" href="/blog/">Blogs</a>
-                </li>
+                
+                <!-- <li class="nav-item" id="blog"> -->
+                  <!-- <a class="nav-link" href="/blog/">Blogs</a> -->
+                <!-- </li> -->
                 <li class="nav-item dropdown" style="position: relative; list-style: none; display: inline-block;">
                   <a 
                       class="nav-link dropdown-toggle" 
@@ -199,6 +224,7 @@
                               Deutsch
                           </a>
                       </li>
+                      
                       <!-- <li style="padding: 0;">
                         <a class="dropdown-item" id="language_chinese_id" href="" 
                            style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
@@ -209,6 +235,11 @@
                     </li> -->
                   </ul>
                 </li>
+                <li class="nav-item">
+  <a href="/book-a-appointment/" style="color: white;">
+    <button class="beautiful-button">Termin buchen</button>
+  </a>
+</li>
               </ul>
             </div>
           </nav>
@@ -285,10 +316,10 @@
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Kontakt
                   </a>
-                  <a class="" href="/blog/">
+                  <!-- <a class="" href="/blog/"> -->
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Blogs
-                  </a>
+                    <!-- Blogs -->
+                  <!-- </a> -->
                   <a class="" href="/data_protection/">
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Datenschutz
@@ -374,14 +405,15 @@
       
       //document.getElementById("language_chinese_id").href="/chi/contact/";
 
-  } else if (path === "/blog/") {
-      document.getElementById("blog").classList.add("active");
-      document.getElementById("language_german_id").href="/blog/";
-      document.getElementById("language_english_id").href="/en/blog/";
+  }
+  // else if (path === "/blog/") {
+    //  document.getElementById("blog").classList.add("active");
+      //document.getElementById("language_german_id").href="/blog/";
+      //document.getElementById("language_english_id").href="/en/blog/";
       
       //document.getElementById("language_chinese_id").href="/chi/blog/";
 
-  }
+  //}
   else if (path === "/data_protection/") {
       document.getElementById("language_german_id").href="/data_protection/";
       document.getElementById("language_english_id").href="/en/data_protection/";
@@ -389,6 +421,13 @@
       //document.getElementById("language_chinese_id").href="/chi/data_protection/";
 
   }
+  else if (path === "/book-a-appointment/") {
+            document.getElementById("language_german_id").href="/book-a-appointment/";
+            document.getElementById("language_english_id").href="/en/book-a-appointment/";
+            
+            //cument.getElementById("language_chinese_id").href="/chi/contact/";
+
+        } 
   
   else if (path === "/imprint/") {
       document.getElementById("language_german_id").href="/imprint/";

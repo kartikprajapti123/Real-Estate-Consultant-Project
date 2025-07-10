@@ -11,6 +11,7 @@ urlpatterns=[
     path("data_protection/",views.data_protection,name="data_proctection"),
     path("blog/",views.blog,name="blog"),
     path("blog-detail/<str:blog_name>/",views.blog_detail,name="blog_detail"),
+    path("book-a-appointment/",views.book_a_appointment,name="book_a_appointment"),
     
     
     path("en/index/",views.en_home,name="en_home"),
@@ -21,6 +22,7 @@ urlpatterns=[
     path("en/data_protection/",views.en_data_protection,name="en_data_proctection"),
     path("en/blog/",views.en_blog,name="en_blog"),
     path("en/blog-detail/<str:blog_name>/",views.en_blog_detail,name="en_blog_detail"),
+    path("en/book-a-appointment/",views.en_book_a_appointment,name="book_a_appointment"),
     
     
     path("chi/index/",views.chi_home,name="chi_home"),

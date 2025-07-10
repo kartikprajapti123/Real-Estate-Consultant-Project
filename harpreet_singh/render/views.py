@@ -108,3 +108,11 @@ def chi_blog_detail(request,blog_name):
 
 def google45af308f4d012cc3(request):
     return render(request,"google45af308f4d012cc3.html")    
+
+
+
+def en_book_a_appointment(request):
+    return render(request,"book_a_appointment-en.html")   
+
+def book_a_appointment(request):
+    return render(request,"book_a_appointment.html")   

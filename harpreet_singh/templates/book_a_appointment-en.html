@@ -1,0 +1,64 @@
+{% extends "base-en.html" %}
+
+{% block title %}
+  Book a Appointment
+{% endblock title %}
+
+{% block body %}
+
+<section style="
+    background-color: #e8f1f8;
+    padding: 80px 20px;
+    text-align: center;
+">
+  <h1 style="
+      font-size: 42px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #04233b;
+      position: relative;
+      display: inline-block;
+  ">
+    Book an Appointment
+    <span style="
+        display: block;
+        height: 4px;
+        width: 60%;
+        background: #064d78;
+        margin: 8px auto 0 auto;
+        border-radius: 2px;
+    "></span>
+  </h1>
+  <p style="
+      font-size: 18px;
+      max-width: 700px;
+      margin: 20px auto 0 auto;
+      color: #333;
+  ">
+    Choose a time that suits you best and let's connect to explore your options together.
+  </p>
+</section>
+
+<section style="
+    padding: 20px 0;
+    background-color: #ffffff;
+">
+  <!-- <div style="
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #e0e6ed;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  "> -->
+    <div class="calendly-inline-widget"
+     data-url="https://calendly.com/ghotra-immobilien-info/1-hour-meeting?locale=de"
+     style="min-width:320px;height:700px;">
+</div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</section>
+
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}
