@@ -155,6 +155,12 @@
                 Anrufen : +49 171 6577439
               </span>
             </a>
+           <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+  <span>
+    Facebook
+  </span>
+</a>
             <a href="mailto:info@ghotra-immobilien.com" target="_blank">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
@@ -174,7 +180,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="/">
-              <img src="/static/images/website logo german.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
+              <img src="/static/images/website logo updated.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -195,6 +201,16 @@
                 <li class="nav-item" id="contact">
                   <a class="nav-link" href="/contact/">Kontakt</a>
                 </li>
+               
+                 <li class="nav-item" id="pdf">
+                  <a class="nav-link" href="/pdf/">Pdf<span style="text-transform: lowercase;">s</span> </a>
+                </li>
+                    <!-- <li class="nav-item" id="pdf">
+                      <a class="nav-link" href="/media/pdf/Mieterselbstauskunft.pdf">Mieterselbstauskunft<span style="text-transform: lowercase;"></span> </a>
+                    </li> -->
+                    <!-- <li class="nav-item" id="pdf">
+                      <a class="nav-link" href="/media/pdf/Selbstauskunft.pdf">Selbstauskunft<span style="text-transform: lowercase;"></span> </a>
+                    </li> -->
                 
                 <!-- <li class="nav-item" id="blog"> -->
                   <!-- <a class="nav-link" href="/blog/">Blogs</a> -->
@@ -259,11 +275,11 @@
                   Adresse
                 </h4>
                 <div class="contact_link_box">
-                  <a href="https://maps.app.goo.gl/CFgeet43kGDfbqyJ6" target="_blank">
+                  <a href="https://maps.app.goo.gl/6fXpoeus1X4b7HGP8" target="_blank">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <span>
-                      Steinauer Straße 10 
-                      60386 Frankfurt am Main
+                      Kölner Str. 1
+                      65760 Eschborn
                     </span>
                   </a>
                   <a href="#">
@@ -281,9 +297,12 @@
                 </div>
               </div>
               <div class="info_social">
-                <a href="https://www.facebook.com/share/R4SP8WTwxFbcX2T5/?mibextid=qi2Omg" target="_blank">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
+                <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+  <span style="font-size:17px;margin-left:10px;">
+    Facebook
+  </span>
+</a>
               </div>
             </div>
             <div class="col-md-6 col-lg-3 info_col">
@@ -328,6 +347,10 @@
                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                     Impressum
                 </a>
+                <a class="" href="/pdf/">
+                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                    PDF
+                </a>
 
                 </div>
               </div>
@@ -340,7 +363,7 @@
         <div class="container">
           <p>
             &copy; <span id="displayYear"></span> Alle Rechte vorbehalten von
-            <a href="https://kartikprajapati.com">kartikprajapati.com</a>
+            <a href="https://kartikprajapati.in">kartikprajapati.in</a>
             <a href="#">+91 9106566253</a>
           </p>
         </div>
@@ -402,6 +425,14 @@
       document.getElementById("contact").classList.add("active");
       document.getElementById("language_german_id").href="/contact/";
       document.getElementById("language_english_id").href="/en/contact/";
+      
+      //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+  }
+  else if (path === "/pdf/") {
+      document.getElementById("pdf").classList.add("active");
+      document.getElementById("language_german_id").href="/pdf/";
+      document.getElementById("language_english_id").href="/en/pdf/";
       
       //document.getElementById("language_chinese_id").href="/chi/contact/";
 

@@ -117,28 +117,29 @@
                 margin-bottom: 0;
             }
         }
+
         .beautiful-button {
-  background: linear-gradient(135deg, #04233b, #064d78);
-  border: none;
-  color: white;
-  padding: 12px 12px;
-  margin:5px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+            background: linear-gradient(135deg, #04233b, #064d78);
+            border: none;
+            color: white;
+            padding: 12px 12px;
+            margin: 5px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-.beautiful-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-}
+        .beautiful-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
 
-.beautiful-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-}
+        .beautiful-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
     </style>
     {% block style %}
 
@@ -156,10 +157,16 @@
                     <div class="contact_nav">
                         <a href="#">
                             <i class="fa fa-phone" aria-hidden="true" style="color: #06456d;"></i>
-                            <span >
+                            <span>
                                 Call: +49 171 6577439
                             </span>
                         </a>
+                        <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+  <span>
+    Facebook
+  </span>
+</a>
                         <a href="mailto:info@ghotra-immobilien.com" target="_blank">
                             <i class="fa fa-envelope" aria-hidden="true" style="color: #06456d;"></i>
                             <span>
@@ -203,10 +210,14 @@
                                 <li class="nav-item" id="contact">
                                     <a class="nav-link" href="/en/contact/">Contact</a>
                                 </li>
-                                
+                                <li class="nav-item" id="pdf">
+                                    <a class="nav-link" href="/en/pdf/">Pdf<span
+                                            style="text-transform: lowercase;">s</span> </a>
+                                </li>
+
 
                                 <!-- <li class="nav-item" id="blog"> -->
-                                    <!-- <a class="nav-link" href="/en/blog/">Blogs</a> -->
+                                <!-- <a class="nav-link" href="/en/blog/">Blogs</a> -->
                                 <!-- </li> -->
                                 <li class="nav-item dropdown"
                                     style="position: relative; list-style: none; display: inline-block;">
@@ -242,9 +253,9 @@
                                         </li> -->
                                     </ul>
                                 </li>
-                                <li class="nav-item" >
+                                <li class="nav-item">
                                     <a href="/en/book-a-appointment/" style="color: white;">
-                                    <button class="beautiful-button">Book a Appointment</button></a>
+                                        <button class="beautiful-button">Book a Appointment</button></a>
 
                                 </li>
                             </ul>
@@ -266,11 +277,11 @@
                                 Address
                             </h4>
                             <div class="contact_link_box">
-                                <a href="https://maps.app.goo.gl/CFgeet43kGDfbqyJ6" target="_blank">
+                                <a href="https://maps.app.goo.gl/6fXpoeus1X4b7HGP8" target="_blank">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                     <span>
-                                        Steinauer Straße 10
-                                        60386 Frankfurt am Main
+                                        Kölner Str. 1
+                                        65760 Eschborn
                                     </span>
                                 </a>
                                 <a href="#">
@@ -285,6 +296,12 @@
                                         Email: info@ghotra-immobilien.com
                                     </span>
                                 </a>
+                                <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+  <span style="font-size:17px;margin-left:10px;">
+    Facebook
+  </span>
+</a>
                             </div>
                         </div>
                     </div>
@@ -292,7 +309,8 @@
                         <div class="info_detail">
                             <h4>Real Estate & Consulting</h4>
                             <p>
-                                We offer expert services in real estate sales, investments, and consulting to help you achieve your real estate goals.
+                                We offer expert services in real estate sales, investments, and consulting to help you
+                                achieve your real estate goals.
                             </p>
                         </div>
                     </div>
@@ -319,8 +337,8 @@
                                     Contact
                                 </a>
                                 <!-- <a class="" href="/en/blog/"> -->
-                                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                                    <!-- Blogs -->
+                                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                                <!-- Blogs -->
                                 <!-- </a> -->
                                 <a class="" href="/en/data_protection/">
                                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
@@ -330,98 +348,112 @@
                                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                                     Imprint
                                 </a>
+                                 <a class="" href="/en/pdf/">
+                                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                                    PDF
+                                </a>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
     </div>
     </section>
-    
-   
-<!-- Calendly inline widget end -->
+
+
+    <!-- Calendly inline widget end -->
 
     <section class="footer_section">
         <div class="container">
-          <p>
-            &copy; <span id="displayYear"></span> All rights reserved by
-            <a href="https://kartikprajapati.com">kartikprajapati.com</a>
-            <a href="#">+91 9106566253</a>
-          </p>
+            <p>
+                &copy; <span id="displayYear"></span> All rights reserved by
+                <a href="https://kartikprajapati.in">kartikprajapati.in</a>
+                <a href="#">+91 9106566253</a>
+            </p>
         </div>
-      </section>
-      
-      <div class="cookie-consent">
+    </section>
+
+    <div class="cookie-consent">
         <div class="cookie-content">
-          <p>We use cookies to improve your browsing experience. By clicking "Accept", you agree to our use of cookies.</p>
-          <button id="accept-cookies" class="accept-button">Accept</button>
-          <button id="reject-cookies" class="accept-button" style="margin-left:10px;">Reject</button>
+            <p>We use cookies to improve your browsing experience. By clicking "Accept", you agree to our use of
+                cookies.</p>
+            <button id="accept-cookies" class="accept-button">Accept</button>
+            <button id="reject-cookies" class="accept-button" style="margin-left:10px;">Reject</button>
         </div>
-      </div>
+    </div>
 
     <script>
         const path = window.location.pathname;
+        console.log(path)
 
         if (path === "/en/index/") {
             document.getElementById("home").classList.add("active");
-            document.getElementById("language_german_id").href="/";
-            document.getElementById("language_english_id").href="/en/index/";
+            document.getElementById("language_german_id").href = "/";
+            document.getElementById("language_english_id").href = "/en/index/";
 
             //document.getElementById("language_chinese_id").href="/chi/index/";
 
 
         } else if (path === "/en/service/") {
             document.getElementById("services").classList.add("active");
-            document.getElementById("language_german_id").href="/service/";
-            document.getElementById("language_english_id").href="/en/service/";
-            
+            document.getElementById("language_german_id").href = "/service/";
+            document.getElementById("language_english_id").href = "/en/service/";
+
             //document.getElementById("language_chinese_id").href="/chi/service/";
 
         } else if (path === "/en/about-us/") {
             document.getElementById("about").classList.add("active");
-            document.getElementById("language_german_id").href="/about-us/";
-            document.getElementById("language_english_id").href="/en/about-us/";
-            
+            document.getElementById("language_german_id").href = "/about-us/";
+            document.getElementById("language_english_id").href = "/en/about-us/";
+
             //document.getElementById("language_chinese_id").href="/chi/about-us/";
 
         } else if (path === "/en/contact/") {
             document.getElementById("contact").classList.add("active");
-            document.getElementById("language_german_id").href="/contact/";
-            document.getElementById("language_english_id").href="/en/contact/";
-            
+            document.getElementById("language_german_id").href = "/contact/";
+            document.getElementById("language_english_id").href = "/en/contact/";
+
             //cument.getElementById("language_chinese_id").href="/chi/contact/";
 
-        } 
+        }
 
         else if (path === "/en/book-a-appointment/") {
-            document.getElementById("language_german_id").href="/book-a-appointment/";
-            document.getElementById("language_english_id").href="/en/book-a-appointment/";
-            
+            document.getElementById("language_german_id").href = "/book-a-appointment/";
+            document.getElementById("language_english_id").href = "/en/book-a-appointment/";
+
             //cument.getElementById("language_chinese_id").href="/chi/contact/";
 
-        } 
+        }
+        else if (path === "/en/pdf/") {
+            document.getElementById("pdf").classList.add("active");
+            document.getElementById("language_german_id").href = "/pdf/";
+            document.getElementById("language_english_id").href = "/en/pdf/";
+
+            //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+        }
         //else if (path === "/en/blog/") {
         //    document.getElementById("blog").classList.add("active");
-          //  document.getElementById("language_german_id").href="/blog/";
-           // document.getElementById("language_english_id").href="/en/blog/";
-            
-            //document.getElementById("language_chinese_id").href="/chi/blog/";
+        //  document.getElementById("language_german_id").href="/blog/";
+        // document.getElementById("language_english_id").href="/en/blog/";
+
+        //document.getElementById("language_chinese_id").href="/chi/blog/";
 
         //}
         else if (path === "/en/data_protection/") {
-            document.getElementById("language_german_id").href="/data_protection/";
-            document.getElementById("language_english_id").href="/en/data_protection/";
-            
+            document.getElementById("language_german_id").href = "/data_protection/";
+            document.getElementById("language_english_id").href = "/en/data_protection/";
+
             //document.getElementById("language_chinese_id").href="/chi/data_protection/";
 
         }
-        
+
         else if (path === "/en/imprint/") {
-            document.getElementById("language_german_id").href="/imprint/";
-            document.getElementById("language_english_id").href="/en/imprint/";
-            
+            document.getElementById("language_german_id").href = "/imprint/";
+            document.getElementById("language_english_id").href = "/en/imprint/";
+
             //document.getElementById("language_chinese_id").href="/chi/imprint/";
 
         }
@@ -464,19 +496,23 @@
     {% block script %}
 
     {% endblock script %}
-<!-- jQery -->
-<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-<!-- popper js -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<!-- bootstrap js -->
-<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-<!-- owl slider -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<!-- custom js -->
-<script type="text/javascript" src="/static/js/custom.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <!-- jQery -->
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="/static/js/custom.js"></script>
+    <!-- Google Map -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 
 </body>
 

@@ -116,3 +116,10 @@ def en_book_a_appointment(request):
 
 def book_a_appointment(request):
     return render(request,"book_a_appointment.html")   
+
+def pdf(request):
+    return render(request,"pdf.html")   
+
+
+def en_pdf(request):
+    return render(request,"pdf-en.html")   
