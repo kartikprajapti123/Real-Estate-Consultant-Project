@@ -501,7 +501,10 @@ a:focus {
       top: 50%;
       width: 45px;
       height: 70%;
-      background-color: $primary2;
+      // background-color: $primary2;
+      background-color: none;
+      
+      
       z-index: 3;
     }
 

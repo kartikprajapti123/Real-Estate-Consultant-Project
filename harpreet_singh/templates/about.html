@@ -1,54 +1,58 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Über Uns
+  Über mich
 {% endblock title %}
 
 {% block body %}
 <section class="about_section layout_padding-bottom" style="margin-top:50px;">
   <div class="container">
-    <div class="row">
-      <!-- Image Column -->
-      
-      <!-- Text Column (full width after image) -->
-      <div class="col-md-6">
+    <div class="row" style="display: flex; justify-content: flex-start; align-items: flex-start;">
+      <!-- Text Column -->
+      <div class="col-md-6 order-2 order-md-1">
         <div class="detail-box">
-          <div class="heading_container">
+          <div class="heading_container mb-4">
             <h2>
-              Über <span>Uns</span>
+              Über <span>mich</span>
             </h2>
           </div>
           <p>
-            Unser Fokus liegt auf professionellen und maßgeschneiderten Immobiliendienstleistungen. Wir unterstützen Sie dabei, Ihre Immobilienziele mit strategischer Planung und fundiertem Fachwissen zu erreichen – ganz gleich, ob beim Kauf, Verkauf oder der Investition. Unsere Expertise und unser Engagement sorgen dafür, dass Ihre Immobilienprojekte reibungslos und erfolgreich verlaufen.
+            Mein Name ist <strong>Harpreet Singh Ghotra</strong>, und Immobilien sind nicht nur mein Beruf – sie sind meine Leidenschaft.
           </p>
-          <ul>
-            <li><strong>Spezialisiertes Immobilienfachwissen:</strong> Unser Team verfügt über umfassende Erfahrung in Wohn-, Gewerbe- und Investmentimmobilien und bietet Ihnen eine ganzheitliche Beratung und Betreuung.</li>
-            <li><strong>Individuelle Betreuung:</strong> Wir bieten maßgeschneiderte Lösungen, die exakt auf Ihre Immobilienbedürfnisse zugeschnitten sind, um nachhaltigen Erfolg zu erzielen.</li>
-            <li><strong>Hervorragende Marktkenntnisse:</strong> Mit tiefen Einblicken in lokale und nationale Märkte unterstützen wir Sie mit wertvollen Analysen und strategischen Empfehlungen.</li>
-            <li><strong>Starkes Branchennetzwerk:</strong> Wir arbeiten mit führenden Experten der Immobilienbranche zusammen, um Ihnen alle erforderlichen Ressourcen und Fachleute zur Verfügung zu stellen.</li>
-            <li><strong>Erfolgreiche Projekte:</strong> Unsere langjährige Erfolgsbilanz und zufriedene Kunden belegen unser Engagement und unsere Fähigkeit, Erwartungen zu übertreffen.</li>
-          </ul>
-          <a href="/contact/" class="btn btn-primary">
-            Kontaktieren Sie Uns
+          <p>
+            Disziplin und Verantwortung haben mein Leben von Anfang an geprägt. Mein Großvater diente ehrenvoll in der indischen Armee und verkörperte Werte wie Integrität und Hingabe, die mich bis heute inspirieren. Angeregt durch diese Prinzipien trat ich im Alter von 18 Jahren der Bundeswehr bei. Diese Erfahrung vermittelte mir Struktur, Widerstandskraft und die Fähigkeit, Verantwortung zu übernehmen – Eigenschaften, die ich täglich in meine Arbeit einbringe.
+          </p>
+          <p>
+            Im Jahr 2020, auf dem Höhepunkt der COVID-19-Pandemie, brachte mich mein Vater mit der Welt der Immobilien in Kontakt. Zur gleichen Zeit veränderte ein inspirierendes Buch grundlegend meine Sichtweise. Angetrieben von dieser neuen Vision kaufte ich innerhalb weniger Monate meine ersten drei Mehrfamilienhäuser.
+          </p>
+          <p>
+            In den letzten fünf Jahren habe ich praktische Erfahrungen gesammelt – mit allen Herausforderungen und Erfolgen, die das Immobiliengeschäft mit sich bringt. Heute ist es meine Mission, besonders Mitglieder der indischen Gemeinschaft in Deutschland bei ihren Immobilienzielen zu unterstützen.
+          </p>
+          <p>
+            Viele Menschen stehen vor Hürden wie Sprachbarrieren, komplexen Prozessen und ungewohnten Systemen. Ich kenne diese Herausforderungen aus erster Hand. Mein Ziel ist es, den Weg einfach und transparent zu gestalten – mit ehrlicher Beratung und schrittweiser Begleitung.
+          </p>
+          <p>
+            Ich setze mich nicht nur dafür ein, Ihnen beim Immobilienkauf zu helfen, sondern auch dafür, dass Sie langfristige Klarheit, Sicherheit und finanzielle Stabilität durch strategische Planung und ein starkes Netzwerk aufbauen können.
+          </p>
+          <p>
+            Lassen Sie uns gemeinsam etwas Bedeutungsvolles schaffen – für Sie, Ihre Familie und Ihre Zukunft.
+          </p>
+          <a href="/de/kontakt/" class="btn btn-primary mt-3">
+            Kontaktieren Sie mich
           </a>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="img-box">
-          <img src="/static/images/harpreet_singh (1).jfif" alt="Immobilienmakler" class="img-fluid" style="width: 100%;
-            background: #eceff4;
-            height: auto;
-            max-height: 523px;
-            object-position: top;
-            max-width: 100%;
-            display: block;
-            margin: auto;
-            object-fit: cover;
-            max-height: 585px;">
+
+      <!-- Image Column -->
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0" style="display: flex; justify-content: center; align-items: center;">
+        <div class="img-box" style="width: 80%; height: 50%;">
+          <img src="/static/images/harpreet_singh (1).jfif"
+               alt="Harpreet Singh Ghotra"
+               class="img-fluid shadow"
+               style="object-fit: cover; border:10px solid #042239; border-radius:20px;">
         </div>
       </div>
     </div>
   </div>
 </section>
-
 {% endblock body %}

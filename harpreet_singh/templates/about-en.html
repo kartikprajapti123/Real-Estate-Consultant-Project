@@ -1,54 +1,61 @@
 {% extends "base-en.html" %}
 
 {% block title %}
-  About Us
+  About Me
 {% endblock title %}
 
 {% block body %}
 <section class="about_section layout_padding-bottom" style="margin-top:50px;">
   <div class="container">
-    <div class="row">
-      <!-- Image Column -->
-      
-      <!-- Text Column (full width after image) -->
-      <div class="col-md-6">
+    <div class="row " style="    display: flex
+;
+    justify-content: flex-start;
+    align-items: flex-start;">
+      <!-- Text Column -->
+      <div class="col-md-6 order-2 order-md-1">
         <div class="detail-box">
-          <div class="heading_container">
+          <div class="heading_container mb-4">
             <h2>
-              About <span>Us</span>
+              About <span>Me</span>
             </h2>
           </div>
           <p>
-            Our focus is on professional and tailored real estate services. We help you achieve your real estate goals with strategic planning and in-depth expertise – whether buying, selling, or investing. Our expertise and dedication ensure that your real estate projects proceed smoothly and successfully.
+            My name is <strong>Harpreet Singh Ghotra</strong>, and real estate is not just my profession—it is my passion.
           </p>
-          <ul>
-            <li><strong>Specialized real estate expertise:</strong> Our team brings extensive experience in residential, commercial, and investment properties, offering you comprehensive advice and support.</li>
-            <li><strong>Individualized attention:</strong> We provide customized solutions tailored precisely to your real estate needs to achieve sustainable success.</li>
-            <li><strong>Top-level market knowledge:</strong> With deep insights into local and national markets, we support you with valuable analyses and strategic recommendations.</li>
-            <li><strong>Strong industry network:</strong> We collaborate with leading real estate industry experts to provide you with all the necessary resources and professionals.</li>
-            <li><strong>Successful projects:</strong> Our long-standing track record of success and satisfied clients demonstrates our commitment and ability to exceed expectations.</li>
-          </ul>
-          <a href="/en/contact/" class="btn btn-primary">
-            Contact Us
+          <p>
+            Discipline and responsibility have shaped my life from the very beginning. My grandfather served honorably in the Indian Army, embodying values of integrity and dedication that inspire me to this day. Motivated by these principles, I joined the German Army (<em>Bundeswehr</em>) at 18. That experience instilled in me structure, resilience, and the confidence to take responsibility—qualities I bring to my work every day.
+          </p>
+          <p>
+            In 2020, during the height of the COVID-19 pandemic, my father introduced me to the world of real estate. Around the same time, a transformative book profoundly changed my perspective. Fueled by this new vision, I purchased my first three multi-family properties within just a few months.
+          </p>
+          <p>
+            Over the past five years, I have gained hands-on experience navigating both the rewarding and challenging aspects of real estate. My mission now is to support others—especially members of the Indian community here in Germany—as they pursue their own real estate goals.
+          </p>
+          <p>
+            Many individuals face obstacles with language barriers, complex processes, and unfamiliar systems. I understand these challenges firsthand. My goal is to make the journey straightforward and transparent, providing honest guidance and step-by-step support.
+          </p>
+          <p>
+            I am committed not only to helping you acquire property but also to empowering you to build clarity, confidence, and long-term financial security through strategic planning and a trusted network.
+          </p>
+          <p>
+            Let’s create something meaningful together—for you, your family, and your future.
+          </p>
+          <a href="/en/contact/" class="btn btn-primary mt-3">
+            Contact Me
           </a>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="img-box">
-          <img src="/static/images/harpreet_singh (1).jfif" alt="Real estate agent" class="img-fluid" style="width: 100%;
-            background: #eceff4;
-            height: auto;
-            max-height: 523px;
-            object-position: top;
-            max-width: 100%;
-            display: block;
-            margin: auto;
-            object-fit: cover;
-            max-height: 585px;">
+      <!-- Image Column -->
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0" style="display: flex;justify-content:center;align-items:center;">
+        <div class="img-box" style="width: 80%;
+    height: 50%;">
+          <img src="/static/images/harpreet_singh (1).jfif"
+               alt="Harpreet Singh Ghotra"
+               class="img-fluid  shadow"
+               style="object-fit: cover; border:10px solid #042239;border-radius:20px;">
         </div>
       </div>
     </div>
   </div>
 </section>
-
 {% endblock body %}
