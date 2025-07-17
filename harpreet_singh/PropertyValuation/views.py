@@ -16,7 +16,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import PropertyValuationModel
 import threading
-
+from harpreet_singh.settings import DEFAULT_FROM_EMAIL
 
 class PropertyValuationViewset(ModelViewSet):
     queryset = PropertyValuationModel.objects.all()
@@ -93,7 +93,7 @@ class PropertyValuationViewset(ModelViewSet):
             kwargs={
                 "subject": "🏡 Your Property Valuation Estimate",
                 "message": plain_message,
-                "from_email": "kartikprajapati26122004@gmail.com",
+                "from_email": DEFAULT_FROM_EMAIL,
                 "recipient_list": [email],
                 "html_message": html_message,
             },

@@ -7,3 +7,4 @@ class PropertyvaluationConfig(AppConfig):
 
     def ready(self):
         import PropertyValuation.signals
+
