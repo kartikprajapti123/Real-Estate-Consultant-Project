@@ -13,6 +13,8 @@ urlpatterns=[
     path("blog-detail/<str:blog_name>/",views.blog_detail,name="blog_detail"),
     path("book-a-appointment/",views.book_a_appointment,name="book_a_appointment"),
     path("pdf/",views.pdf,name="pdf"),
+    path("property_valuation/",views.property_valuation,name="property_valuation"),
+    
     
     
     
@@ -26,6 +28,8 @@ urlpatterns=[
     path("en/blog-detail/<str:blog_name>/",views.en_blog_detail,name="en_blog_detail"),
     path("en/book-a-appointment/",views.en_book_a_appointment,name="book_a_appointment"),
     path("en/pdf/",views.en_pdf,name="en_pdf"),
+    path("en/property_valuation/",views.en_property_valuation,name="en_property_valuation"),
+    
     
     
     

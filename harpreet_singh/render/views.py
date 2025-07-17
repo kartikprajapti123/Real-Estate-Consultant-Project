@@ -123,3 +123,9 @@ def pdf(request):
 
 def en_pdf(request):
     return render(request,"pdf-en.html")   
+
+def en_property_valuation(request):
+    return render(request,"property_calculation-en.html")
+
+def property_valuation(request):
+    return render(request,"property_calculation.html")

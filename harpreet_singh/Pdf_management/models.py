@@ -12,7 +12,8 @@ class PdfManagement(models.Model):
     )
     
     def __str__(self):
-        return str(self.pdf_file)
+        
+        return self.pdf_name
     
     
     # class meta:

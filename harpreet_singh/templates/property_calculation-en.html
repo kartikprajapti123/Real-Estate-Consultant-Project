@@ -1,0 +1,388 @@
+{% extends "base-en.html" %}
+
+{% block title %}
+Property Calculation
+{% endblock title %}
+
+{% block style %}
+<style>
+  .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/static/images/new background image.jpg') center center / cover no-repeat;
+  
+  opacity: 0.3;
+  z-index: -1;
+}
+  .wizard-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .wizard-container {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    border: 10px solid #04233b;
+  }
+
+  .wizard-title {
+    font-size: 26px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #333;
+  }
+
+  .wizard-description {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .progress {
+    height: 100%;
+    background: #04233b;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+  }
+
+  form .step {
+    display: none;
+    animation: slideIn 0.3s ease;
+  }
+
+  form .step.active {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+
+  .option {
+    margin-bottom: 20px;
+  }
+
+  .option input,
+  .option select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button.back,
+  button.continue,
+  button.submit {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button.back {
+    background: #f0f0f0;
+    color: #555;
+  }
+
+  button.continue,
+  button.submit {
+    background: #04233b;
+    color: #fff;
+  }
+
+  button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .step p {
+    font-size: 16px;
+    text-align: center;
+  }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="container" style="margin:40px 0; max-width:100%; display:grid; place-content:center;">
+  <!-- Hero Section -->
+  <div style="text-align:center; max-width:800px; margin-bottom:40px;">
+    <h1 style="font-size:32px;font-weight:600; color:#04233b; margin-bottom:10px;">Get Your Property's Accurate Market Valuation</h1>
+    <p style="font-size:17px; color:black;">
+      Our intelligent estimation tool uses up-to-date local market data to calculate the current value of your property.
+    </p>
+  </div>
+
+  <div class="wizard-wrapper">
+    <div class="wizard-container">
+      <h1 class="wizard-title">🏡 Property Valuation</h1>
+      <p class="wizard-description">
+  Enter your property details step-by-step. We’ll analyze local market data and email you a free valuation estimate.<br>
+  <span style="display:inline-block; margin-top:8px; color:#888;">
+    Please make sure you enter correct values to get the most accurate estimation.
+  </span>
+</p>
+
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+
+      <form id="wizardForm" >
+        <!-- Step 1: Property Type -->
+         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <div class="step active">
+          <h2>Select Property Type</h2>
+          <div class="option">
+            <select name="propertyType" required id="property_type">
+              <option value="">Choose property type</option>
+              <option value="Apartment">House</option>
+              <option value="House">Apartment</option>
+              <option value="Plot">Plot</option>
+            </select>
+          </div>
+          <div class="buttons" >
+            <button type="button" class="back" disabled>Back</button>
+            <button type="button" class="continue">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 2: City -->
+        <div class="step">
+          <h2>Select City</h2>
+          <div class="option" id="city_name">
+            <select name="city" required id="city_names">
+              <option value="">Choose a city</option>
+              <option value="Berlin">Berlin</option>
+              <option value="Munich">Munich</option>
+              <option value="Hamburg">Hamburg</option>
+            </select>
+          </div>
+          <div class="buttons">
+            <button type="button" class="back">Back</button>
+            <button type="button" class="continue">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Address -->
+        <div class="step">
+          <h2>Enter Address</h2>
+          <div class="option"><input type="text" name="street" placeholder="Street Name" required id="street_address"></div>
+          <div class="option"><input type="text" name="number" placeholder="House/Building Number" required id="house_number"></div>
+          <div class="buttons">
+            <button type="button" class="back">Back</button>
+            <button type="button" class="continue">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Size -->
+        <div class="step">
+          <h2>Enter Property Size</h2>
+          <div class="option"><input type="number" name="size" placeholder="Size in m² (e.g., 120)" required id="property_size"></div>
+          <div class="buttons">
+            <button type="button" class="back">Back</button>
+            <button type="button" class="continue">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Email -->
+        <div class="step">
+          <h2>Enter Email Address</h2>
+          <div class="option"><input type="email" name="email" placeholder="you@example.com" required id="email"></div>
+          <div class="buttons">
+            <button type="button" class="back">Back</button>
+            <button type="submit" class="submit"  >Submit</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Confirmation -->
+        <div class="step">
+          <!-- <h2 style="text-align: center;">✅ Thank you!</h2> -->
+          <!-- <p>Your valuation request has been submitted successfully. We’ll email you the estimated value shortly.</p> -->
+        </div>
+        
+      </form>
+      <div id="response_message" style="display: none;">
+          <h2 style="text-align: center;">✅ Thank you!</h2>
+          <p style="text-align: center;">Your valuation request has been submitted successfully. We’ll email you the estimated value shortly.</p>
+        </div>
+    </div>
+  </div>
+
+  <!-- Trust Badges / Testimonials -->
+  <div style="max-width:800px; margin:40px auto 0; text-align:center;">
+    <p style="font-size:15px; color:black;">Trusted by over <strong>500 property owners</strong> across Germany</p>
+  
+  </div>
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+  const steps = document.querySelectorAll('.step');
+  const progress = document.querySelector('.progress');
+  let currentStep = 0;
+
+  function updateStep(stepIndex) {
+    steps.forEach((step, index) => {
+      step.classList.toggle('active', index === stepIndex);
+    });
+
+    const percent = (stepIndex / (steps.length - 1)) * 100;
+    progress.style.width = `${percent}%`;
+  }
+
+  document.querySelectorAll('.continue').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const inputs = steps[currentStep].querySelectorAll('input, select');
+      let valid = true;
+      inputs.forEach(input => {
+        if (!input.checkValidity()) {
+          input.reportValidity();
+          valid = false;
+        }
+      });
+
+      if (valid && currentStep < steps.length - 2) {
+        currentStep++;
+        updateStep(currentStep);
+      }
+    });
+  });
+
+  document.querySelectorAll('.back').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        updateStep(currentStep);
+      }
+    });
+  });
+
+  document.getElementById('wizardForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+    currentStep++;
+    updateStep(currentStep);
+
+    // You can replace this with AJAX to submit form data
+    const data = new FormData(e.target);
+    console.log("Valuation request data:", Object.fromEntries(data.entries()));
+  });
+
+
+  function get_city_name(){
+    fetch(`${window.location.origin}/api/apiproperty/city-name/`,{
+      method:"GET",
+      
+    }).then((Response)=>{
+      return Response.json()
+    }).then((response)=>{
+      if (response.success){
+        let str=`<option value="">Choose a city</option>`
+        console.log(str)
+
+        response.data.forEach((data)=>{
+          console.log(data)
+          str+=`<option value="${data}">${data}</option>`
+        })
+        console.log(str)
+        document.getElementById("city_names").innerHTML=str
+      }
+    })
+  }
+  
+  get_city_name()
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie("csrftoken");
+
+  document.getElementById("wizardForm").onsubmit=(e)=>{
+
+    e.preventDefault()
+
+
+const payload = {
+  property_type: document.getElementById("property_type").value,
+  city_name: document.getElementById("city_names").value,
+  street_address: document.getElementById("street_address").value,
+  house_number: document.getElementById("house_number").value,
+  property_size: document.getElementById("property_size").value,
+  email: document.getElementById("email").value
+};
+
+fetch(`${window.location.origin}/api/apiproperty/get-result/`,{
+  method:"POST",
+  headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": csrftoken
+    },
+  body:JSON.stringify(payload)
+
+  
+}).then((response)=>{
+  return response.json()
+}).then((response)=>{
+  console.log(response)
+  if (response.success){
+    console.log(response)
+    document.getElementById("response_message").style.display="block"
+      }
+      document.getElementById('wizardForm').innerHTML=""
+    })
+}
+  
+  
+</script>
+{% endblock script %}

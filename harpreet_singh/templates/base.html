@@ -13,11 +13,11 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/static/images/webiste_logo_5.png" type="">
-  
+
 
   <title> {% block title %}
-    
-  {% endblock title %} </title>
+
+    {% endblock title %} </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
@@ -25,7 +25,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
   <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
@@ -37,12 +38,13 @@
   <style>
     @supports (-webkit-touch-callout: none) {
       #website_logo {
-          height: 72px;
-          width: auto;
-          object-fit: cover;
-          object-position: center;
+        height: 72px;
+        width: auto;
+        object-fit: cover;
+        object-position: center;
       }
     }
+
     .cookie-consent {
       position: fixed;
       bottom: 0;
@@ -56,23 +58,26 @@
       z-index: 9999;
       box-sizing: border-box;
     }
-  
+
     .cookie-content {
       display: flex;
       justify-content: center;
       align-items: center;
       max-width: 900px;
       margin: 0 auto;
-      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-      gap: 10px; /* Spacing between buttons */
+      flex-wrap: wrap;
+      /* Allow buttons to wrap on smaller screens */
+      gap: 10px;
+      /* Spacing between buttons */
     }
-  
+
     .cookie-consent p {
       margin-right: 20px;
       font-size: 14px;
-      flex: 1; /* Allow text to take up available space */
+      flex: 1;
+      /* Allow text to take up available space */
     }
-  
+
     .accept-button {
       background-color: #ffcc00;
       border: none;
@@ -83,84 +88,108 @@
       border-radius: 5px;
       transition: background-color 0.3s;
     }
-  
+
     .accept-button:hover {
       background-color: #e6b800;
     }
-  
+
     /* Make the buttons stack vertically on small screens */
     @media (max-width: 600px) {
       .cookie-content {
         flex-direction: column;
         align-items: center;
       }
-  
+
       .cookie-consent p {
         margin-right: 0;
         margin-bottom: 10px;
       }
-  
+
       .accept-button {
         width: 100%;
         max-width: 200px;
         margin-bottom: 10px;
       }
-  
+
       .accept-button:last-child {
         margin-bottom: 0;
       }
     }
-      .beautiful-button {
+
+    .beautiful-button {
+      background: linear-gradient(135deg, #04233b, #064d78);
+      border: none;
+      color: white;
+      padding: 12px 12px;
+      margin: 5px;
+      margin: 5px 20px;
+
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .beautiful-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .beautiful-button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+    .floating-calculator-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   background: linear-gradient(135deg, #04233b, #064d78);
-  border: none;
   color: white;
-  padding: 12px 12px;
-  margin:5px;
-  margin:5px 20px;
-
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
   font-size: 16px;
-  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
-.beautiful-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-}
-
-.beautiful-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+.floating-calculator-btn:hover {
+  opacity: 0.9;
 }
   </style>
   {% block style %}
-    
+
   {% endblock style %}
 
 </head>
 
 <body>
 
+    <button class="floating-calculator-btn" onclick="openCalculator()">
+  🏠 Zum Immobilienrechner
+</button>
   <div class="hero_area">
     <!-- header section starts -->
     <header class="header_section">
       <div class="header_top">
         <div class="container-fluid">
           <div class="contact_nav">
-            <a href="#" >
+            <a href="#">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                 +49 171 6577439
+                +49 171 6577439
               </span>
             </a>
-           <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
-  <i class="fa fa-facebook" aria-hidden="true"></i>
-  <span>
-    Facebook
-  </span>
-</a>
+            <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span>
+                Facebook
+              </span>
+            </a>
             <a href="mailto:info@ghotra-immobilien.com" target="_blank">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
@@ -180,10 +209,12 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="/">
-              <img src="/static/images/website logo updated.png" id="website_logo" alt="" style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
+              <img src="/static/images/website logo updated.png" id="website_logo" alt=""
+                style="height: 72px; width: auto; max-width: 100%; object-fit: cover; object-position: center;">
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
 
@@ -201,47 +232,44 @@
                 <li class="nav-item" id="contact">
                   <a class="nav-link" href="/contact/">Kontakt</a>
                 </li>
-               
-                 <li class="nav-item" id="pdf">
+
+                <li class="nav-item" id="pdf">
                   <a class="nav-link" href="/pdf/">Pdf<span style="text-transform: lowercase;">s</span> </a>
                 </li>
-                    <!-- <li class="nav-item" id="pdf">
+                
+                <!-- <li class="nav-item" id="pdf">
                       <a class="nav-link" href="/media/pdf/Mieterselbstauskunft.pdf">Mieterselbstauskunft<span style="text-transform: lowercase;"></span> </a>
                     </li> -->
-                    <!-- <li class="nav-item" id="pdf">
+                <!-- <li class="nav-item" id="pdf">
                       <a class="nav-link" href="/media/pdf/Selbstauskunft.pdf">Selbstauskunft<span style="text-transform: lowercase;"></span> </a>
                     </li> -->
-                
+
                 <!-- <li class="nav-item" id="blog"> -->
-                  <!-- <a class="nav-link" href="/blog/">Blogs</a> -->
+                <!-- <a class="nav-link" href="/blog/">Blogs</a> -->
                 <!-- </li> -->
                 <li class="nav-item dropdown" style="position: relative; list-style: none; display: inline-block;">
-                  <a 
-                      class="nav-link dropdown-toggle" 
-                      
-                      id="languageDropdown" 
-                      role="button" 
-                      style="text-decoration: none; color: black; cursor: pointer; display: inline-block; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 5px;">
-                      Language
+                  <a class="nav-link dropdown-toggle" id="languageDropdown" role="button"
+                    style="text-decoration: none; color: black; cursor: pointer; display: inline-block; background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 5px;">
+                    Language
                   </a>
-                  <ul class="dropdown-menu" 
-                      style="list-style: none; margin: 0; padding: 0; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ddd; border-radius: 5px; display: none; z-index: 1000; min-width: 150px;">
-                      <li style="padding: 0;">
-                          <a class="dropdown-item" id="language_english_id" href="" 
-                             style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
-                              <img src="https://flagcdn.com/w40/gb.png" alt="English" width="20" style="margin-right: 10px;">
-                              Englisch
-                          </a>
-                      </li>
-                      <li style="padding: 0;">
-                          <a class="dropdown-item" id="language_german_id" href="" 
-                             style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
-                              <img src="https://flagcdn.com/w40/de.png" alt="German" width="20" style="margin-right: 10px;">
-                              Deutsch
-                          </a>
-                      </li>
-                      
-                      <!-- <li style="padding: 0;">
+                  <ul class="dropdown-menu"
+                    style="list-style: none; margin: 0; padding: 0; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ddd; border-radius: 5px; display: none; z-index: 1000; min-width: 150px;">
+                    <li style="padding: 0;">
+                      <a class="dropdown-item" id="language_english_id" href=""
+                        style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="English" width="20" style="margin-right: 10px;">
+                        Englisch
+                      </a>
+                    </li>
+                    <li style="padding: 0;">
+                      <a class="dropdown-item" id="language_german_id" href=""
+                        style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
+                        <img src="https://flagcdn.com/w40/de.png" alt="German" width="20" style="margin-right: 10px;">
+                        Deutsch
+                      </a>
+                    </li>
+
+                    <!-- <li style="padding: 0;">
                         <a class="dropdown-item" id="language_chinese_id" href="" 
                            style="text-decoration: none; color: black; padding: 10px 15px; display: block; font-size: 14px; white-space: nowrap;">
                            <img src="https://flagcdn.com/w40/cn.png" alt="中文" width="20"
@@ -252,10 +280,10 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-  <a href="/book-a-appointment/" style="color: white;">
-    <button class="beautiful-button">Termin buchen</button>
-  </a>
-</li>
+                  <a href="/book-a-appointment/" style="color: white;">
+                    <button class="beautiful-button">Termin buchen</button>
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>
@@ -264,244 +292,268 @@
     </header>
 
     {% block body %}
-      
+
     {% endblock body %}
     <section class="info_section layout_padding2">
-        <div class="container">
-          <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <div class="col-md-6 col-lg-3 info_col">
-              <div class="info_contact">
-                <h4>
-                  Adresse
-                </h4>
-                <div class="contact_link_box">
-                  <a href="https://maps.app.goo.gl/6fXpoeus1X4b7HGP8" target="_blank">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>
-                      Kölner Str. 1
-                      65760 Eschborn
-                    </span>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>
-                      +49 171 6577439
-                    </span>
-                  </a>
-                  <a href="mailto:info@ghotra-immobilien.com">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>
-                      info@ghotra-immobilien.com
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div class="info_social">
-                <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
-  <i class="fa fa-facebook" aria-hidden="true"></i>
-  <span style="font-size:17px;margin-left:10px;">
-    Facebook
-  </span>
-</a>
+      <div class="container">
+        <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+              <h4>
+                Adresse
+              </h4>
+              <div class="contact_link_box">
+                <a href="https://maps.app.goo.gl/6fXpoeus1X4b7HGP8" target="_blank">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>
+                    Kölner Str. 1
+                    65760 Eschborn
+                  </span>
+                </a>
+                <a href="#">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    +49 171 6577439
+                  </span>
+                </a>
+                <a href="mailto:info@ghotra-immobilien.com">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    info@ghotra-immobilien.com
+                  </span>
+                </a>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3 info_col">
-              <div class="info_detail">
-                <h4>Immobilien & Beratung</h4>
-                <p>
-                  Wir bieten Expertenservices in Immobilienverkauf, Investitionen und Beratung, um Ihnen zu helfen, Ihre Immobilienziele zu erreichen.
-                </p>
-              </div>
+            <div class="info_social">
+              <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <span style="font-size:17px;margin-left:10px;">
+                  Facebook
+                </span>
+              </a>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="info_link_box">
-                <h4>
-                  Links
-                </h4>
-                <div class="info_links">
-                  <a class="active" href="/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Startseite
-                  </a>
-                  <a class="" href="/about-us/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Über Mich
-                  </a>
-                  <a class="" href="/service/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Dienstleistungen
-                  </a>
-                  <a class="" href="/contact/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Kontakt
-                  </a>
-                  <!-- <a class="" href="/blog/"> -->
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    <!-- Blogs -->
-                  <!-- </a> -->
-                  <a class="" href="/data_protection/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Datenschutz
+          </div>
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_detail">
+              <h4>Immobilien & Beratung</h4>
+              <p>
+                Wir bieten Expertenservices in Immobilienverkauf, Investitionen und Beratung, um Ihnen zu helfen, Ihre
+                Immobilienziele zu erreichen.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="active" href="/">
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Startseite
+                </a>
+                <a class="" href="/about-us/">
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Über Mich
+                </a>
+                <a class="" href="/service/">
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Dienstleistungen
+                </a>
+                <a class="" href="/contact/">
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Kontakt
+                </a>
+                <!-- <a class="" href="/blog/"> -->
+                <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                <!-- Blogs -->
+                <!-- </a> -->
+                <a class="" href="/data_protection/">
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Datenschutz
                 </a>
                 <a class="" href="/imprint/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    Impressum
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  Impressum
                 </a>
                 <a class="" href="/pdf/">
-                    <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
-                    PDF
+                  <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
+                  PDF
                 </a>
+                  <a  target="_blank" href="https://neodirect.de/">Neodirect (Geschäftspartner)<span style="text-transform: lowercase;"></span> </a>
+                  <a  target="_blank" href="https://www.stbsingh.de/">Stbsingh (Geschäftspartner)<span style="text-transform: lowercase;"></span> </a>
 
-                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </section>
 
     <section class="footer_section">
-        <div class="container">
-          <p>
-            &copy; <span id="displayYear"></span> Alle Rechte vorbehalten von
-            <a href="https://kartikprajapati.in">kartikprajapati.in</a>
-            <a href="#">+91 9106566253</a>
-          </p>
-        </div>
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> Alle Rechte vorbehalten von
+          <a href="https://kartikprajapati.in">kartikprajapati.in</a>
+          <a href="#">+91 9106566253</a>
+        </p>
+      </div>
     </section>
 
     <div class="cookie-consent">
       <div class="cookie-content">
-        <p>Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern. Wenn Sie auf „Akzeptieren“ klicken, stimmen Sie unserer Verwendung von Cookies zu.</p>
+        <p>Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern. Wenn Sie auf „Akzeptieren“ klicken, stimmen Sie
+          unserer Verwendung von Cookies zu.</p>
         <button id="accept-cookies" class="accept-button">Akzeptieren</button>
         <button id="reject-cookies" class="accept-button" style="margin-left:10px;">Ablehnen</button>
       </div>
     </div>
-    
-
-  <!-- jQery -->
-  <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="/static/js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- custom js -->
-  <script type="text/javascript" src="/static/js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-
-  {% block script %}
-    
-  {% endblock script %}
-  
-  <script>
-    const path = window.location.pathname;
-
-    if (path === "/") {
-      document.getElementById("home").classList.add("active");
-      document.getElementById("language_german_id").href="/";
-      document.getElementById("language_english_id").href="/en/index/";
-
-//      document.getElementById("language_chinese_id").href="/chi/index/";
 
 
-  } else if (path === "/service/") {
-      document.getElementById("services").classList.add("active");
-      document.getElementById("language_german_id").href="/service/";
-      document.getElementById("language_english_id").href="/en/service/";
-      
-  //    document.getElementById("language_chinese_id").href="/chi/service/";
+    <!-- jQery -->
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="/static/js/custom.js"></script>
+    <!-- Google Map -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap&language=de"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 
-  } else if (path === "/about-us/") {
-      document.getElementById("about").classList.add("active");
-      document.getElementById("language_german_id").href="/about-us/";
-      document.getElementById("language_english_id").href="/en/about-us/";
-      
-    //  document.getElementById("language_chinese_id").href="/chi/about-us/";
+    {% block script %}
 
-  } else if (path === "/contact/") {
-      document.getElementById("contact").classList.add("active");
-      document.getElementById("language_german_id").href="/contact/";
-      document.getElementById("language_english_id").href="/en/contact/";
-      
-      //document.getElementById("language_chinese_id").href="/chi/contact/";
+    {% endblock script %}
 
-  }
-  else if (path === "/pdf/") {
-      document.getElementById("pdf").classList.add("active");
-      document.getElementById("language_german_id").href="/pdf/";
-      document.getElementById("language_english_id").href="/en/pdf/";
-      
-      //document.getElementById("language_chinese_id").href="/chi/contact/";
+    <script>
+      const path = window.location.pathname;
 
-  }
-  // else if (path === "/blog/") {
-    //  document.getElementById("blog").classList.add("active");
+      if (path === "/") {
+        document.getElementById("home").classList.add("active");
+        document.getElementById("language_german_id").href = "/";
+        document.getElementById("language_english_id").href = "/en/index/";
+
+        //      document.getElementById("language_chinese_id").href="/chi/index/";
+
+
+      } else if (path === "/service/") {
+        document.getElementById("services").classList.add("active");
+        document.getElementById("language_german_id").href = "/service/";
+        document.getElementById("language_english_id").href = "/en/service/";
+
+        //    document.getElementById("language_chinese_id").href="/chi/service/";
+
+      } else if (path === "/about-us/") {
+        document.getElementById("about").classList.add("active");
+        document.getElementById("language_german_id").href = "/about-us/";
+        document.getElementById("language_english_id").href = "/en/about-us/";
+
+        //  document.getElementById("language_chinese_id").href="/chi/about-us/";
+
+      } else if (path === "/contact/") {
+        document.getElementById("contact").classList.add("active");
+        document.getElementById("language_german_id").href = "/contact/";
+        document.getElementById("language_english_id").href = "/en/contact/";
+
+        //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+      }
+      else if (path === "/property_valuation/") {
+            document.getElementById("language_german_id").href = "/property_valuation/";
+            document.getElementById("language_english_id").href = "/en/property_valuation/";
+
+            //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+        }
+      else if (path === "/pdf/") {
+        document.getElementById("pdf").classList.add("active");
+        document.getElementById("language_german_id").href = "/pdf/";
+        document.getElementById("language_english_id").href = "/en/pdf/";
+
+        //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+      }
+      // else if (path === "/blog/") {
+      //  document.getElementById("blog").classList.add("active");
       //document.getElementById("language_german_id").href="/blog/";
       //document.getElementById("language_english_id").href="/en/blog/";
-      
+
       //document.getElementById("language_chinese_id").href="/chi/blog/";
 
-  //}
-  else if (path === "/data_protection/") {
-      document.getElementById("language_german_id").href="/data_protection/";
-      document.getElementById("language_english_id").href="/en/data_protection/";
-      
-      //document.getElementById("language_chinese_id").href="/chi/data_protection/";
+      //}
+      else if (path === "/data_protection/") {
+        document.getElementById("language_german_id").href = "/data_protection/";
+        document.getElementById("language_english_id").href = "/en/data_protection/";
 
-  }
-  else if (path === "/book-a-appointment/") {
-            document.getElementById("language_german_id").href="/book-a-appointment/";
-            document.getElementById("language_english_id").href="/en/book-a-appointment/";
-            
-            //cument.getElementById("language_chinese_id").href="/chi/contact/";
+        //document.getElementById("language_chinese_id").href="/chi/data_protection/";
 
-        } 
-  
-  else if (path === "/imprint/") {
-      document.getElementById("language_german_id").href="/imprint/";
-      document.getElementById("language_english_id").href="/en/imprint/";
-      
-      //document.getElementById("language_chinese_id").href="/chi/imprint/";
-
-  }
-
-
-
-    // Cookie consent script
-    window.onload = function() {
-      var consent = localStorage.getItem('cookie-consent');
-      if (consent=="false" || consent=="" || !consent) {
-        document.querySelector('.cookie-consent').style.display = 'block';
       }
-    }
+      else if (path === "/book-a-appointment/") {
+        document.getElementById("language_german_id").href = "/book-a-appointment/";
+        document.getElementById("language_english_id").href = "/en/book-a-appointment/";
 
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-      localStorage.setItem('cookie-consent', 'true');
-      document.querySelector('.cookie-consent').style.display = 'none';
-    });
+        //cument.getElementById("language_chinese_id").href="/chi/contact/";
 
-    document.getElementById('reject-cookies').addEventListener('click', function () {
-      localStorage.setItem('cookie-consent', 'false');
-      document.querySelector('.cookie-consent').style.display = 'none';
-    });
+      }
+
+      else if (path === "/imprint/") {
+        document.getElementById("language_german_id").href = "/imprint/";
+        document.getElementById("language_english_id").href = "/en/imprint/";
+
+        //document.getElementById("language_chinese_id").href="/chi/imprint/";
+
+      }
+
+
+
+      // Cookie consent script
+      window.onload = function () {
+        var consent = localStorage.getItem('cookie-consent');
+        if (consent == "false" || consent == "" || !consent) {
+          document.querySelector('.cookie-consent').style.display = 'block';
+        }
+      }
+
+      document.getElementById('accept-cookies').addEventListener('click', function () {
+        localStorage.setItem('cookie-consent', 'true');
+        document.querySelector('.cookie-consent').style.display = 'none';
+      });
+
+      document.getElementById('reject-cookies').addEventListener('click', function () {
+        localStorage.setItem('cookie-consent', 'false');
+        document.querySelector('.cookie-consent').style.display = 'none';
+      });
 
       // JavaScript to toggle dropdown on hover
       const dropdown = document.querySelector('.nav-item.dropdown');
       const menu = dropdown.querySelector('.dropdown-menu');
-    
+
       dropdown.addEventListener('mouseover', () => {
         menu.style.display = 'block';
       });
-    
+
       dropdown.addEventListener('mouseout', () => {
         menu.style.display = 'none';
       });
-  </script>
 
-  
+      function openCalculator() {
+    // Example: Redirect to calculator page
+    window.location.href = "/property_valuation/";
+
+    // Or you can open a modal instead (let me know if you need that)
+  }
+
+    </script>
+
+
 
 </body>
+
 </html>

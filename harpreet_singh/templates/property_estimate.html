@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .email-wrapper {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 30px;
+    }
+    .email-content {
+      background: #ffffff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .email-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .email-header img {
+      max-height: 60px;
+    }
+    .email-body {
+      font-size: 16px;
+      color: #333;
+    }
+    .highlight {
+      font-size: 22px;
+      color: #00c18c;
+      font-weight: bold;
+    }
+    .range {
+      background: #f0f9f7;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-content">
+      <div class="email-header">
+        <img src="https://www.ghotra-immobilien.com/static/images/website%20logo%20updated.png" alt="Company Logo" />
+        <h2>Property Valuation Estimate</h2>
+      </div>
+      <div class="email-body">
+        <p>Hello,</p>
+        <p>Based on the details provided, we’ve estimated the value of your property:</p>
+        <ul>
+          <li><strong>Property Type:</strong> {{ property_type }}</li>
+          <li><strong>Location:</strong> {{ address }} - {{ city }}</li>
+          <li><strong>Size:</strong> {{ size }} m²</li>
+        </ul>
+        <p class="highlight">Estimated Price: {{ estimated_price }}</p>
+        <div class="range">
+          Expected Range: <strong>{{ range_min }}</strong> – <strong>{{ range_max }}</strong>
+        </div>
+        <p>We'll continue monitoring the market to keep your estimates up to date.</p>
+        <p>Best regards,<br/>The Property Team</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -140,6 +140,27 @@
             transform: translateY(0);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
         }
+        .floating-calculator-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #04233b, #064d78);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.floating-calculator-btn:hover {
+  opacity: 0.9;
+}
+
     </style>
     {% block style %}
 
@@ -148,7 +169,9 @@
 </head>
 
 <body>
-
+    <button class="floating-calculator-btn" onclick="openCalculator()">
+  🏠 Real Estate Calculator
+</button>
     <div class="hero_area">
         <!-- header section starts -->
         <header class="header_section">
@@ -162,11 +185,11 @@
                             </span>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
-  <i class="fa fa-facebook" aria-hidden="true"></i>
-  <span>
-    Facebook
-  </span>
-</a>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <span>
+                                Facebook
+                            </span>
+                        </a>
                         <a href="mailto:info@ghotra-immobilien.com" target="_blank">
                             <i class="fa fa-envelope" aria-hidden="true" style="color: #06456d;"></i>
                             <span>
@@ -287,7 +310,7 @@
                                 <a href="#">
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                     <span>
-                                         +49 171 6577439
+                                        +49 171 6577439
                                     </span>
                                 </a>
                                 <a href="mailto:info@ghotra-immobilien.com">
@@ -297,11 +320,11 @@
                                     </span>
                                 </a>
                                 <a href="https://www.facebook.com/profile.php?id=100002662444851" target="_blank">
-  <i class="fa fa-facebook" aria-hidden="true"></i>
-  <span style="font-size:17px;margin-left:10px;">
-    Facebook
-  </span>
-</a>
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    <span style="font-size:17px;margin-left:10px;">
+                                        Facebook
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -348,11 +371,14 @@
                                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                                     Imprint
                                 </a>
-                                 <a class="" href="/en/pdf/">
+                                <a class="" href="/en/pdf/">
                                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                                     PDF
                                 </a>
-
+                                    <a  target="_blank" href="https://neodirect.de/">Neodirect
+                                        (Partners)<span style="text-transform: lowercase;"></span> </a>
+                                    <a target="_blank" href="https://www.stbsingh.de/">Stbsingh
+                                        (Partners)<span style="text-transform: lowercase;"></span> </a>
                             </div>
                         </div>
                     </div>
@@ -434,6 +460,13 @@
             //document.getElementById("language_chinese_id").href="/chi/contact/";
 
         }
+        else if (path === "/en/property_valuation/") {
+            document.getElementById("language_german_id").href = "/property_valuation/";
+            document.getElementById("language_english_id").href = "/en/property_valuation/";
+
+            //document.getElementById("language_chinese_id").href="/chi/contact/";
+
+        }
         //else if (path === "/en/blog/") {
         //    document.getElementById("blog").classList.add("active");
         //  document.getElementById("language_german_id").href="/blog/";
@@ -489,6 +522,13 @@
         dropdown.addEventListener('mouseout', () => {
             menu.style.display = 'none';
         });
+
+  function openCalculator() {
+    // Example: Redirect to calculator page
+    window.location.href = "/en/property_valuation/";
+
+    // Or you can open a modal instead (let me know if you need that)
+  }
 
 
     </script>
