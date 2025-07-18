@@ -140,27 +140,70 @@
             transform: translateY(0);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
         }
+
         .floating-calculator-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #04233b, #064d78);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #04233b, #064d78);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-.floating-calculator-btn:hover {
-  opacity: 0.9;
-}
+        .floating-calculator-btn:hover {
+            opacity: 0.9;
+        }
 
+        .partner-logo {
+            max-height: 80px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 1;
+        }
+
+        .partner-logo-link:hover .partner-logo {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .partner-box {
+            width: 220px;
+            height: 140px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-logo-img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo-link:hover .partner-box {
+            transform: scale(1.05);
+             background-color: #ffffff;
+
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-logo-link:hover .partner-logo-img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
     </style>
     {% block style %}
 
@@ -170,8 +213,8 @@
 
 <body>
     <button class="floating-calculator-btn" onclick="openCalculator()">
-  🏠 Real Estate Calculator
-</button>
+        🏠 Real Estate Calculator
+    </button>
     <div class="hero_area">
         <!-- header section starts -->
         <header class="header_section">
@@ -291,6 +334,54 @@
         {% block body %}
 
         {% endblock body %}
+        <section class="partners_section py-5">
+            <div class="container text-center">
+                <h2 class="mb-4" style="font-weight: 700; color: #04233b;">Our Partners</h2>
+                <p class="mb-5" style="max-width: 600px; margin: auto; color: #555;">
+                    Together with our strong partners, we offer you comprehensive and professional services.
+                </p>
+
+
+
+                <!-- Add More Partners Here -->
+                <!--
+      <div class="col-6 col-md-3 mb-4">
+        <a href="https://example.com/" target="_blank" class="partner-logo-link">
+          <img src="/static/images/example-logo.png" alt="Example Partner" class="img-fluid partner-logo">
+        </a>
+      </div>
+      -->
+                <div class="row justify-content-center align-items-center">
+                    <!-- Partner 1 -->
+                    <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                        <a href="https://neodirect.de/" target="_blank" class="partner-logo-link">
+                            <div class="partner-box">
+                                <img src="/static/images/neodirect.webp" alt="Neodirect" class="partner-logo-img">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                        <a href="https://www.stbsingh.de/" target="_blank" class="partner-logo-link">
+                            <div class="partner-box">
+                                <img src="/static/images/stbsingh.png" alt="Stbsingh" class="partner-logo-img">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="col-6 col-md-3 mb-4 d-flex justify-content-center">
+                        <a href="https://www.oe-ag.de/" target="_blank" class="partner-logo-link">
+                            <div class="partner-box">
+                                <img src="/static/images/oe-eg.png" alt="OE AG" class="partner-logo-img">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="info_section layout_padding2">
             <div class="container">
                 <div class="row" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
@@ -375,10 +466,10 @@
                                     <!-- <img src="/static/images/nav-bullet.png" alt=""> -->
                                     PDF
                                 </a>
-                                    <a  target="_blank" href="https://neodirect.de/">Neodirect
-                                        (Partners)<span style="text-transform: lowercase;"></span> </a>
-                                    <a target="_blank" href="https://www.stbsingh.de/">Stbsingh
-                                        (Partners)<span style="text-transform: lowercase;"></span> </a>
+                                <a target="_blank" href="https://neodirect.de/">Neodirect
+                                    (Partners)<span style="text-transform: lowercase;"></span> </a>
+                                <a target="_blank" href="https://www.stbsingh.de/">Stbsingh
+                                    (Partners)<span style="text-transform: lowercase;"></span> </a>
                             </div>
                         </div>
                     </div>
@@ -523,12 +614,12 @@
             menu.style.display = 'none';
         });
 
-  function openCalculator() {
-    // Example: Redirect to calculator page
-    window.location.href = "/en/property_valuation/";
+        function openCalculator() {
+            // Example: Redirect to calculator page
+            window.location.href = "/en/property_valuation/";
 
-    // Or you can open a modal instead (let me know if you need that)
-  }
+            // Or you can open a modal instead (let me know if you need that)
+        }
 
 
     </script>
